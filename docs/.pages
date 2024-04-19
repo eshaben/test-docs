@@ -1,4 +1,4 @@
 nav:
  - index.md
- - v0
- - v1
+ - reference.md
+ - xcm-sdk.md
