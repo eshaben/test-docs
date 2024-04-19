@@ -6,17 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Use the Moonbeam XCM SDK to easily deposit and withdraw cross-chain assets to Moonbeam from Polkadot and other parachains in the ecosystem.">
+        <meta name="description" content="Use the Moonbeam XCM SDK to easily transfer cross-chain assets between parachains or between a parachain and relay chain within the Polkadot/Kusama ecosystems.">
       
       
       
-        <link rel="canonical" href="https://eshaben.github.io/test-docs/0.1/xcm-sdk/">
+        <link rel="canonical" href="https://eshaben.github.io/test-docs/0.2/xcm-sdk/">
       
       
         <link rel="prev" href="../reference/">
       
-      
-        <link rel="next" href="../v0/">
       
       
       <link rel="icon" href="/assets/images/Moonbeam-Favicon-50.webp">
@@ -24,7 +22,7 @@
     
     
       
-        <title>XCM SDK v0 - My Docs</title>
+        <title>XCM SDK v1 - My Docs</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-the-moonbeam-xcm-sdk-v0" class="md-skip">
+        <a href="#using-the-moonbeam-xcm-sdk-v1" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              XCM SDK v0
+              XCM SDK v1
             
           </span>
         </div>
@@ -252,209 +250,222 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XCM SDK Reference for v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
     
+      
+      
+  
+  
     
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
       
         
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
-    v0
+    XCM SDK v1
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            v0
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../v0/" class="md-nav__link">
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    XCM SDK Guides for v0
+    XCM SDK v1
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reference.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Reference
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../xcm-sdk.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using the SDK
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    v1
-  </span>
-  
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction {: #introduction }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-xcm-sdk-install-the-xcm-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install the XCM SDK {: #install-the-xcm-sdk }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-signers-create-signers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Signers {: #create-signers }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Signers {: #create-signers }">
+      <ul class="md-nav__list">
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            v1
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
+          <li class="md-nav__item">
+  <a href="#create-a-evm-signer-create-a-evm-signer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a EVM Signer {: #create-a-evm-signer }
+    </span>
+  </a>
   
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../v1/" class="md-nav__link">
+</li>
         
+          <li class="md-nav__item">
+  <a href="#create-a-polkadot-signer-create-a-polkadot-signer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Polkadot Signer {: #create-a-polkadot-signer }
+    </span>
+  </a>
   
-  <span class="md-ellipsis">
-    XCM SDK Guides
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../v1/reference/" class="md-nav__link">
+</li>
         
+      </ul>
+    </nav>
   
-  <span class="md-ellipsis">
-    Reference
-  </span>
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-asset-and-chain-data-asset-chain-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Asset and Chain Data {: #asset-chain-data }
+    </span>
+  </a>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../v1/xcm-sdk/" class="md-nav__link">
+    <nav class="md-nav" aria-label="Get Asset and Chain Data {: #asset-chain-data }">
+      <ul class="md-nav__list">
         
+          <li class="md-nav__item">
+  <a href="#get-list-of-supported-assets-get-list-of-supported-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get List of Supported Assets {: #get-list-of-supported-assets }
+    </span>
+  </a>
   
-  <span class="md-ellipsis">
-    Using the SDK
-  </span>
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-supported-assets-by-ecosystem-get-supported-assets-by-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get List of Supported Assets by Ecosystem {: #get-supported-assets-by-ecosystem }
+    </span>
+  </a>
   
-
-      </a>
-    </li>
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-supported-chains-by-asset-get-list-of-supported-assets-by-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get List of Supported Chains by Asset {: #get-list-of-supported-assets-by-chain }
+    </span>
+  </a>
   
-
-              
-            
-          </ul>
-        </nav>
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-xcm-transfer-data-build-xcm-transfer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build XCM Transfer Data {: #build-xcm-transfer-data }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-an-asset-transfer-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer an Asset {: #transfer-an-asset }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swap-an-asset-swap-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swap an Asset {: #swap-an-asset}
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-an-estimate-of-the-asset-to-be-received-on-the-destination-chain-get-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get an Estimate of the Asset to be Received on the Destination Chain {: #get-estimate }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-transfer-minimum-and-maximum-amounts-transfer-min-max-amounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Transfer Minimum and Maximum Amounts {: #transfer-min-max-amounts }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-transfer-fees-get-transfer-fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Transfer Fees {: #get-transfer-fees }
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -496,37 +507,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-started-getting-started" class="md-nav__link">
+  <a href="#install-the-xcm-sdk-install-the-xcm-sdk" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Started {: #getting-started }
+      Install the XCM SDK {: #install-the-xcm-sdk }
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Getting Started {: #getting-started }">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-signers-create-signers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Signers {: #create-signers }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Signers {: #create-signers }">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation-installation" class="md-nav__link">
+  <a href="#create-a-evm-signer-create-a-evm-signer" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation {: #installation }
+      Create a EVM Signer {: #create-a-evm-signer }
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-signers-creating-signers" class="md-nav__link">
+  <a href="#create-a-polkadot-signer-create-a-polkadot-signer" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating Signers {: creating-signers }
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#initialization-initializing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Initialization {: #initializing }
+      Create a Polkadot Signer {: #create-a-polkadot-signer }
     </span>
   </a>
   
@@ -538,46 +549,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-sdk-interfaces-using-the-api" class="md-nav__link">
+  <a href="#get-asset-and-chain-data-asset-chain-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the SDK Interfaces {: #using-the-api }
+      Get Asset and Chain Data {: #asset-chain-data }
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Using the SDK Interfaces {: #using-the-api }">
+    <nav class="md-nav" aria-label="Get Asset and Chain Data {: #asset-chain-data }">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#asset-symbols-symbols" class="md-nav__link">
+  <a href="#get-list-of-supported-assets-get-list-of-supported-assets" class="md-nav__link">
     <span class="md-ellipsis">
-      Asset Symbols {: #symbols }
+      Get List of Supported Assets {: #get-list-of-supported-assets }
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#assets-assets" class="md-nav__link">
+  <a href="#get-list-of-supported-assets-by-ecosystem-get-supported-assets-by-ecosystem" class="md-nav__link">
     <span class="md-ellipsis">
-      Assets {: #assets }
+      Get List of Supported Assets by Ecosystem {: #get-supported-assets-by-ecosystem }
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#moonbeam-native-asset-data-native-assets" class="md-nav__link">
+  <a href="#get-list-of-supported-chains-by-asset-get-list-of-supported-assets-by-chain" class="md-nav__link">
     <span class="md-ellipsis">
-      Moonbeam Native Asset Data {: #native-assets }
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#moonbeam-native-chain-data-native-chain-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Moonbeam Native Chain Data {: #native-chain-data }
+      Get List of Supported Chains by Asset {: #get-list-of-supported-assets-by-chain }
     </span>
   </a>
   
@@ -589,188 +591,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-sdk-methods-using-the-sdk-methods" class="md-nav__link">
+  <a href="#build-xcm-transfer-data-build-xcm-transfer-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the SDK Methods {: #using-the-sdk-methods }
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using the SDK Methods {: #using-the-sdk-methods }">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deposit-deposit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deposit {: #deposit }
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deposit {: #deposit }">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chains-chains-deposit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Chains {: #chains-deposit }
+      Build XCM Transfer Data {: #build-xcm-transfer-data }
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#from-from" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#transfer-an-asset-transfer-an-asset" class="md-nav__link">
     <span class="md-ellipsis">
-      From {: #from }
+      Transfer an Asset {: #transfer-an-asset }
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#get-get-deposit" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#swap-an-asset-swap-an-asset" class="md-nav__link">
     <span class="md-ellipsis">
-      Get {: #get-deposit }
+      Swap an Asset {: #swap-an-asset}
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#send-send-deposit" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#get-an-estimate-of-the-asset-to-be-received-on-the-destination-chain-get-estimate" class="md-nav__link">
     <span class="md-ellipsis">
-      Send {: #send-deposit }
+      Get an Estimate of the Asset to be Received on the Destination Chain {: #get-estimate }
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#get-fee-get-fee-deposit" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#get-transfer-minimum-and-maximum-amounts-transfer-min-max-amounts" class="md-nav__link">
     <span class="md-ellipsis">
-      Get Fee {: #get-fee-deposit }
+      Get Transfer Minimum and Maximum Amounts {: #transfer-min-max-amounts }
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#withdraw-withdraw" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#get-transfer-fees-get-transfer-fees" class="md-nav__link">
     <span class="md-ellipsis">
-      Withdraw {: #withdraw }
+      Get Transfer Fees {: #get-transfer-fees }
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Withdraw {: #withdraw }">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chains-chains-withdraw" class="md-nav__link">
-    <span class="md-ellipsis">
-      Chains {: #chains-withdraw }
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to-to" class="md-nav__link">
-    <span class="md-ellipsis">
-      To {: #to }
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-get-withdraw" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get {: #get-withdraw }
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#send-send-withdraw" class="md-nav__link">
-    <span class="md-ellipsis">
-      Send {: #send-withdraw }
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-fee-get-fee-withdraw" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get Fee {: #get-fee-withdraw }
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscribe-to-assets-balance-information-subscribe" class="md-nav__link">
-    <span class="md-ellipsis">
-      Subscribe to Assets Balance Information {: #subscribe }
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#utility-functions-sdk-utils" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utility Functions {: #sdk-utils }
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Utility Functions {: #sdk-utils }">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#check-if-transfer-data-is-for-a-deposit-deposit-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      Check if Transfer Data is for a Deposit  {: #deposit-check }
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-if-transfer-data-is-for-a-withdrawal-withdraw-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      Check if Transfer Data is for a Withdrawal {: #withdraw-check }
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#convert-balance-to-decimal-or-bigint-decimals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Convert Balance to Decimal or BigInt {: #decimals }
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -789,825 +659,766 @@
                   
 
 
-<h1 id="using-the-moonbeam-xcm-sdk-v0">Using the Moonbeam XCM SDK: v0</h1>
+<h1 id="using-the-moonbeam-xcm-sdk-v1">Using the Moonbeam XCM SDK: v1</h1>
 <h2 id="introduction-introduction">Introduction {: #introduction }</h2>
-<p>The Moonbeam XCM SDK enables developers to easily deposit and withdraw assets to Moonbeam/Moonriver from the relay chain and other parachains in the Polkadot/Kusama ecosystem. With the SDK, you don't need to worry about determining the multilocation of the origin or destination assets or which extrinsics are used on which networks to send XCM transfers. To deposit or withdraw assets, you simply define the asset and origin chain you want to deposit from or withdraw back to, along with the sending account's signer, and the amount to send.</p>
-<p>The XCM SDK offers simple helper functions like <code>deposit</code> and <code>withdraw</code>, that provide a very simple interface to execute XCM transfers between chains in the Polkadot/Kusama ecosystem. In addition, the XCM config package allows any parachain project to add their information in a standard way, so they can be immediately supported by the XCM SDK.</p>
-<p>For an overview of the available methods and interfaces in the Moonbeam XCM SDK, please refer to the <a href="/v0/reference">Reference for v0</a>{target=_blank} page.</p>
-<p>If you're using v1.x, please refer to the <a href="/v1/">SDK guides specific to v1</a>{target=_blank}.</p>
+<p>The Moonbeam XCM SDK enables developers to easily transfer assets between chains, either between parachains or between a parachain and the relay chain, within the Polkadot/Kusama ecosystem. With the SDK, you don't need to worry about determining the multilocation of the origin or destination assets or which extrinsics are used on which networks to send XCM transfers.</p>
+<p>The XCM SDK offers helper functions, that provide a very simple interface to execute XCM transfers between chains in the Polkadot/Kusama ecosystem. In addition, the XCM config package allows any parachain project to add their information in a standard way, so they can be immediately supported by the XCM SDK.</p>
+<p>For an overview of the available methods and interfaces in the Moonbeam XCM SDK, please refer to the <a href="/v1/reference">Reference</a>{target=_blank} page.</p>
 <p>The examples in this guide are shown on Moonbeam, but can be adapted to be used on Moonriver or Moonbase Alpha.</p>
-<h2 id="getting-started-getting-started">Getting Started {: #getting-started }</h2>
-<p>To get started with the XCM SDK, you'll first need to install the corresponding NPM package. Next, you'll also need to create signers to be used to sign transactions to transfer assets between Moonbeam and another chain within the Polkadot ecosystem. Lastly, you'll need to initialize the API which will provide you with asset and chain information and the necessary functions to deposit, withdraw, and subscribe to balance information.</p>
-<h3 id="installation-installation">Installation {: #installation }</h3>
-<p>For the purposes of this guide you'll need to install two packages: the XCM SDK package, and the XCM config package.</p>
-<p>The XCM SDK package will enable you to easily deposit and withdraw assets, and subscribe to balance information for each of the supported assets.</p>
-<p>The XCM config package will be used to obtain origin asset and chain information for each of the supported assets. The config package also includes native asset and chain information for each of the Moonbeam-based networks, as well as some underlying functions of the SDK.</p>
-<p>To install the XCM SDK and XCM config packages, you can run the following command:</p>
-<pre><code class="language-bash">npm install @moonbeam-network/xcm-sdk @moonbeam-network/xcm-config
+<h2 id="install-the-xcm-sdk-install-the-xcm-sdk">Install the XCM SDK {: #install-the-xcm-sdk }</h2>
+<p>To get started with the Moonbeam XCM SDK, you'll need to first install the SDK:</p>
+<pre><code class="language-bash">npm install @moonbeam-network/xcm-sdk
 </code></pre>
-<p>You need to have peer dependencies, like <a href="https://docs.ethers.org/">Ethers.js</a>{target=_blank} and the <a href="https://polkadot.js.org/docs/api/">Polkadot.js API</a>{target=_blank} installed.</p>
-<p>You can install them by running the following command:</p>
-<pre><code class="language-bash">npm i @polkadot/api-augment @polkadot/types @polkadot/util @polkadot/util-crypto ethers
+<p>You'll also need to install a few additional dependencies that you'll use to interact with the SDK in this guide. You'll need the Polkadot.js API to create a Polkadot signer:</p>
+<pre><code class="language-bash">npm install @polkadot/api @polkadot/util-crypto
+</code></pre>
+<p>You'll also need an Ethereum signer if you're interacting with an Ethereum-compatible chain like Moonbeam. This guide will cover using Ethers.js and viem. You'll need to install whichever library you want to use:</p>
+<p>=== "Ethers.js"</p>
+<pre><code>```bash
+npm install ethers@^5.7.2
+```
+</code></pre>
+<p>=== "viem"</p>
+<pre><code>```bash
+npm install viem
+```
+</code></pre>
+<h2 id="create-signers-create-signers">Create Signers {: #create-signers }</h2>
+<p>When transferring assets between chains, you'll need signers in place to sign the transactions. If you're interacting with an Ethereum-compatible chain that uses standard Ethereum-style H160 addresses, such as Moonbeam, you'll need to have an Ethereum signer, which can be an <a href="https://docs.ethers.org/v5/">Ethers.js</a>{target=_blank} signer or a <a href="https://viem.sh/docs/clients/wallet.html">viem Wallet Client</a>{target=_blank}. To interact with the relay chain or other parachains, you'll need a <a href="https://polkadot.js.org/docs/api/">Polkadot</a>{target=_blank} signer.</p>
+<p>You can pass, for example, a <a href="https://docs.ethers.org/v5/getting-started/#getting-started--connecting">browser extension wallet as a signer into Ethers</a>{target=_blank} or <a href="https://viem.sh/docs/clients/wallet.html#json-rpc-accounts">viem</a>{target=_blank}, such as MetaMask. Similarly, with Polkadot, you can <a href="https://polkadot.js.org/docs/extension/">pass a compatible wallet to the signer using the <code>@polkadot/extension-dapp</code> library</a>{target=_blank}.</p>
+<p>To create an EVM signer and a Polkadot signer, you can refer to the following sections.</p>
+<p>!!! remember
+    <strong>Never store your private key or mnemonic in a JavaScript or TypeScript file.</strong></p>
+<h3 id="create-a-evm-signer-create-a-evm-signer">Create a EVM Signer {: #create-a-evm-signer }</h3>
+<p>To create an Ethers signer, you can use the following code snippet:</p>
+<pre><code class="language-js">import { ethers } from 'ethers';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const provider = new ethers.providers.WebSocketProvider('INSERT_WS_ENDPOINT', {
+  chainId: INSERT_CHAIN_ID,
+  name: 'INSERT_CHAIN_NAME',
+});
+const evmSigner = new ethers.Wallet(privateKey, provider);
+</code></pre>
+<p>For Moonbeam specifically, you can use the following configurations:</p>
+<p>=== "Moonbeam"</p>
+<pre><code>```js
+import { ethers } from 'ethers';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const provider = new ethers.providers.WebSocketProvider(
+  '{{ networks.moonbeam.wss_url }}', 
+  {
+    chainId: {{ networks.moonbeam.chain_id }},
+    name: 'moonbeam',
+  }
+);
+const evmSigner = new ethers.Wallet(privateKey, provider);
+```
+</code></pre>
+<p>=== "Moonriver"</p>
+<pre><code>```js
+import { ethers } from 'ethers';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const provider = new ethers.providers.WebSocketProvider(
+  '{{ networks.moonriver.wss_url }}', 
+  {
+    chainId: {{ networks.moonriver.chain_id }},
+    name: 'moonriver',
+  }
+);
+const evmSigner = new ethers.Wallet(privateKey, provider);
+```
+</code></pre>
+<p>=== "Moonbase Alpha"</p>
+<pre><code>```js
+import { ethers } from 'ethers';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const provider = new ethers.providers.WebSocketProvider(
+  '{{ networks.moonbase.wss_url }}',
+  {
+    chainId: {{ networks.moonbase.chain_id }},
+    name: 'moonbase',
+  }
+);
+const evmSigner = new ethers.Wallet(privateKey, provider);
+```
+</code></pre>
+<p>Alternatively, you can create a viem Wallet Client to pass as EVM signer:</p>
+<p>=== "Moonbeam"</p>
+<pre><code>```js
+import { createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts' 
+import { moonbeam } from 'viem/chains';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const account = privateKeyToAccount(privateKey);
+
+const evmSigner = createWalletClient({
+  account,
+  chain: moonbeam,
+  transport: http(),
+});
+```
+</code></pre>
+<p>=== "Moonriver"</p>
+<pre><code>```js
+import { createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts' 
+import { moonriver } from 'viem/chains';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const account = privateKeyToAccount(privateKey);
+
+const evmSigner = createWalletClient({
+  account,
+  chain: moonriver,
+  transport: http(),
+});
+```
+</code></pre>
+<p>=== "Moonbase Alpha"</p>
+<pre><code>```js
+import { createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts' 
+import { moonbaseAlpha } from 'viem/chains';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const account = privateKeyToAccount(privateKey);
+
+const evmSigner = createWalletClient({
+  account,
+  chain: moonbaseAlpha,
+  transport: http(),
+});
+```
+</code></pre>
+<p>If you want to pass in a browser extension wallet to viem, you can use the following code:</p>
+<p>=== "Moonbeam"</p>
+<pre><code>```js
+import { createWalletClient, custom } from 'viem';
+import { moonbeam } from 'viem/chains';
+
+const evmSigner = createWalletClient({
+  chain: moonbeam,
+  transport: custom(window.ethereum),
+});
+```
+</code></pre>
+<p>=== "Moonriver"</p>
+<pre><code>```js
+import { createWalletClient, custom } from 'viem';
+import { moonriver } from 'viem/chains';
+
+const evmSigner = createWalletClient({
+  chain: moonriver,
+  transport: custom(window.ethereum),
+});
+```
+</code></pre>
+<p>=== "Moonbase Alpha"</p>
+<pre><code>```js
+import { createWalletClient, custom } from 'viem';
+import { moonbaseAlpha } from 'viem/chains';
+
+const evmSigner = createWalletClient({
+  chain: moonbaseAlpha,
+  transport: custom(window.ethereum),
+});
+```
 </code></pre>
 <p>!!! note
-    There is a <a href="https://github.com/polkadot-js/api/issues/4315">known issue</a>{target=_blank} when using the Moonbeam XCM packages alongside Polkadot.js with Node.js (JavaScript) that will cause package conflict warnings to appear in the console. Using TypeScript is recommended.</p>
-<h3 id="creating-signers-creating-signers">Creating Signers {: creating-signers }</h3>
-<p>When interacting with the <code>deposit</code> and <code>withdraw</code> functions of the XCM SDK, you'll need to provide an <a href="https://docs.ethers.org/">Ethers.js</a>{target=_blank} and <a href="https://polkadot.js.org/docs/api/">Polkadot.js</a>{target=_blank} signer, which will be used to sign and send the transactions. The Ethers signer is used to sign transactions on Moonbeam, and the Polkadot signer will be used to sign transactions on the origin chain you're depositing assets from.</p>
-<p>You can pass, for example, a <a href="https://docs.ethers.org/v6/getting-started/#starting-connecting">MetaMask signer into Ethers</a>{target=_blank} or another compatible wallet. Similarly with Polkadot, you can <a href="https://polkadot.js.org/docs/extension/">pass a compatible wallet to the signer using the <code>@polkadot/extension-dapp</code> library</a>{target=_blank}.</p>
-<p>To create a signer for Ethers.js and Polkadot.js, you can refer to the following code snippets. In this example, you can use a Polkadot.js Keyring to sign transactions on the origin chain for deposits. Please note that this approach is not recommended for production applications. <strong>Never store your private key or mnemonic in a JavaScript or TypeScript file.</strong></p>
-<p>=== "Moonbeam"</p>
-<pre><code>```js
-import { ethers } from 'ethers';
-import { Keyring } from '@polkadot/api';
-
-// Set up Ethers provider and signer
-const providerRPC = {
-  moonbeam: {
-    name: 'moonbeam',
-    rpc: '{{ networks.moonbeam.rpc_url }}',
-    chainId: {{ networks.moonbeam.chain_id }}, // {{ networks.moonbeam.hex_chain_id }} in hex,
-  },
-};
-const provider = new ethers.JsonRpcProvider(providerRPC.moonbeam.rpc, {
-  chainId: providerRPC.moonbeam.chainId,
-  name: providerRPC.moonbeam.name,
+    --8&lt;-- 'text/_common/endpoint-setup.md'</p>
+<h3 id="create-a-polkadot-signer-create-a-polkadot-signer">Create a Polkadot Signer {: #create-a-polkadot-signer }</h3>
+<p>In this example, you can use a <a href="https://docs.moonbeam.network/builders/build/substrate-api/polkadot-js-api#keyrings">Polkadot.js Keyring</a>{target=_blank} to sign transactions. Please note that this approach is not recommended for production applications.</p>
+<pre><code class="language-js">import { Keyring } from '@polkadot/api';
+import { cryptoWaitReady } from '@polkadot/util-crypto';
+const privateKey = 'INSERT_PRIVATE_KEY';
+await cryptoWaitReady();
+const keyring = new Keyring({
+  ss58Format: 'INSERT_SS58_FORMAT',
+  type: 'sr25519',
 });
-const ethersSigner = new ethers.Wallet('INSERT_PRIVATE_KEY', provider);
-
-// Set up Polkadot keyring
-const keyring = new Keyring({ type: 'sr25519' });
-const polkadotKeyring = keyring.addFromUri(mnemonic);
-```
+const pair = keyring.createFromUri(privateKey);
 </code></pre>
-<p>=== "Moonriver"</p>
-<pre><code>```js
-import { ethers } from 'ethers';
-import { Keyring } from '@polkadot/api';
+<p>!!! note
+    In the above <code>INSERT_PRIVATE_KEY</code> field, you can specify a seed phrase instead of a private key.</p>
+<h2 id="get-asset-and-chain-data-asset-chain-data">Get Asset and Chain Data {: #asset-chain-data }</h2>
+<p>You can use any of the following code examples to retrieve information on the supported assets and the chains that support these assets.</p>
+<h3 id="get-list-of-supported-assets-get-list-of-supported-assets">Get List of Supported Assets {: #get-list-of-supported-assets }</h3>
+<p>To get a list of all of the assets supported by the XCM SDK, you can instantiate the XCM SDK and call the <code>assets</code> function.</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
 
-// Set up Ethers provider and signer
-const providerRPC = {
-  moonriver: {
-    name: 'moonriver',
-    rpc: '{{ networks.moonriver.rpc_url }}',
-    chainId: {{ networks.moonriver.chain_id }}, // {{ networks.moonriver.hex_chain_id }} in hex,
-  },
-};
-const provider = new ethers.JsonRpcProvider(providerRPC.moonriver.rpc, {
-  chainId: providerRPC.moonriver.chainId,
-  name: providerRPC.moonriver.name,
+const sdkInstance = new Sdk();
+const assets = sdkInstance.assets();
+
+console.log('The supported assets are as follows:');
+assets.assets.forEach((asset) =&gt; {
+  console.log(`- ${asset.originSymbol}`);
 });
-const ethersSigner = new ethers.Wallet('INSERT_PRIVATE_KEY', provider);
-
-// Set up Polkadot keyring
-const keyring = new Keyring({ type: 'sr25519' });
-const polkadotKeyring = keyring.addFromUri('INSERT_MNEMONIC');
-```
 </code></pre>
-<p>=== "Moonbase Alpha"</p>
-<pre><code>```js
-import { ethers } from 'ethers';
-import { Keyring } from '@polkadot/api';
+<h3 id="get-list-of-supported-assets-by-ecosystem-get-supported-assets-by-ecosystem">Get List of Supported Assets by Ecosystem {: #get-supported-assets-by-ecosystem }</h3>
+<p>To get a list of the supported assets for a particular ecosystem, you can pass in the ecosystem name: <code>polkadot</code>, <code>kusama</code>, or <code>alphanet-relay</code>. For example, the following snippet will get all of the Polkadot assets supported:</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
 
-// Set up Ethers provider and signer
-const providerRPC = {
-  moonbase: {
-    name: 'moonbase-alpha',
-    rpc: '{{ networks.moonbase.rpc_url }}',
-    chainId: {{ networks.moonbase.chain_id }}, // {{ networks.moonbase.hex_chain_id }} in hex,
-  },
-};
-const provider = new ethers.JsonRpcProvider(providerRPC.moonbase.rpc, {
-  chainId: providerRPC.moonbase.chainId,
-  name: providerRPC.moonbase.name,
+const sdkInstance = new Sdk();
+const assets = sdkInstance.assets('polkadot');
+
+console.log('The supported assets within the Polkadot ecosystem are as follows:');
+assets.assets.forEach((asset) =&gt; {
+  console.log(`- ${asset.originSymbol}`);
 });
-const ethersSigner = new ethers.Wallet('INSERT_PRIVATE_KEY', provider);
+</code></pre>
+<h3 id="get-list-of-supported-chains-by-asset-get-list-of-supported-assets-by-chain">Get List of Supported Chains by Asset {: #get-list-of-supported-assets-by-chain }</h3>
+<p>To get a list of the supported source and destination chains for a given asset, you can use the following code snippet, which logs the supported chains by asset for all of the supported assets in the Polkadot ecosystem:</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
 
-// Set up Polkadot keyring
-const keyring = new Keyring({ type: 'sr25519' });
-const polkadotKeyring = keyring.addFromUri('INSERT_MNEMONIC');
-```
-</code></pre>
-<h3 id="initialization-initializing">Initialization {: #initializing }</h3>
-<p>To be able to deposit, withdraw, and subscribe to balance information for all of the supported assets, you'll need to start off by importing the <code>init</code> function from the XCM SDK and call it:</p>
-<p>=== "Moonbeam"</p>
-<pre><code>```js
-import { init } from '@moonbeam-network/xcm-sdk';
-const { moonbeam } = init();
-```
-</code></pre>
-<p>=== "Moonriver"</p>
-<pre><code>```js
-import { init } from '@moonbeam-network/xcm-sdk';
-const { moonriver } = init();
-```
-</code></pre>
-<p>=== "Moonbase Alpha"</p>
-<pre><code>```js
-import { init } from '@moonbeam-network/xcm-sdk';
-const { moonbase } = init();
-```
-</code></pre>
-<p>If you intend to support a specific wallet, you can pass a signer into the <code>init</code> function right away. Otherwise, you'll be able to pass a signer directly when building the transfer data for a deposit or withdraw. To pass in a signer for <a href="https://docs.moonbeam.network/builders/build/eth-api/libraries/ethersjs">Ethers</a>{target=_blank} and <a href="https://docs.moonbeam.network/builders/build/substrate-api/polkadot-js-api">Polkadot</a>{target=_blank}, you can use the following snippet:</p>
-<p>=== "Moonbeam"</p>
-<pre><code>```js
-import { init } from '@moonbeam-network/xcm-sdk';
-const { moonbeam } = init({
-  ethersSigner: 'INSERT_ETHERS_SIGNER',
-  polkadotSigner: 'INSERT_POLKADOT_SIGNER',
-});
-```
-</code></pre>
-<p>=== "Moonriver"</p>
-<pre><code>```js
-import { init } from '@moonbeam-network/xcm-sdk';
-const { moonriver } = init({
-  ethersSigner: 'INSERT_ETHERS_SIGNER',
-  polkadotSigner: 'INSERT_POLKADOT_SIGNER',
-});
-```
-</code></pre>
-<p>=== "Moonbase Alpha"</p>
-<pre><code>```js
-import { init } from '@moonbeam-network/xcm-sdk';
-const { moonbase } = init({
-  ethersSigner: 'INSERT_ETHERS_SIGNER',
-  polkadotSigner: 'INSERT_POLKADOT_SIGNER',
-});
-```
-</code></pre>
-<h2 id="using-the-sdk-interfaces-using-the-api">Using the SDK Interfaces {: #using-the-api }</h2>
-<p>The Moonbeam SDK provides an API which includes a series of <a href="/v0/reference/#core-sdk-interfaces">interfaces</a>{target=_blank} to get asset information for each of the supported assets, chain information for the initialized network, and functions to enable deposits, withdrawals, and subscription to balance information.</p>
-<p>Make sure you have <a href="#initializing">initialized</a> the Moonbeam network you want to interact with first.</p>
-<h3 id="asset-symbols-symbols">Asset Symbols {: #symbols }</h3>
-<p>An asset symbol refers to the symbol of the asset on the origin chain. For example, <code>GLMR</code> is the native asset on Moonbeam.</p>
-<p>To get a list of the supported asset symbols for each network, you can access the <code>symbols</code> property:</p>
-<p>=== "Moonbeam"</p>
-<pre><code>```js
-moonbeam.symbols
-```
-</code></pre>
-<p>=== "Moonriver"</p>
-<pre><code>```js
-moonriver.symbols
-```
-</code></pre>
-<p>=== "Moonbase Alpha"</p>
-<pre><code>```js
-moonbase.symbols
-```
-</code></pre>
-<p>An example of the data contained in the <code>symbols</code> property is as follows:</p>
-<pre><code class="language-js">[ 'ACA', 'ASTR', 'AUSD', 'DOT', 'GLMR', 'IBTC', 'INTR', 'PARA', 'PHA']
-</code></pre>
-<h3 id="assets-assets">Assets {: #assets }</h3>
-<p>To get a list of the supported assets along with their asset ID, precompiled contract address on Moonbeam, and their origin asset symbols, you can access the <code>assets</code> property:</p>
-<p>=== "Moonbeam"</p>
-<pre><code>```js
-moonbeam.assets
-```
-</code></pre>
-<p>=== "Moonriver"</p>
-<pre><code>```js
-moonriver.assets
-```
-</code></pre>
-<p>=== "Moonbase Alpha"</p>
-<pre><code>```js
-moonbase.assets
-```
-</code></pre>
-<p>An example of the data contained in the <code>assets</code> property is as follows:</p>
-<pre><code class="language-js">assets: {
-  ACA: {
-    id: '224821240862170613278369189818311486111',
-    erc20Id: '0xffffffffa922fef94566104a6e5a35a4fcddaa9f',
-    originSymbol: 'ACA'
-  },
-  ASTR: {
-    id: '224077081838586484055667086558292981199',
-    erc20Id: '0xffffffffa893ad19e540e172c10d78d4d479b5cf',
-    originSymbol: 'ASTR'
-  },
-  ...
-}
-</code></pre>
-<p>Where the <code>id</code> refers to the asset ID, the <code>erc20id</code> refers to the asset's precompiled contract address, and the <code>originSymbol</code> refers to the asset's symbol on the origin chain.</p>
-<h3 id="moonbeam-native-asset-data-native-assets">Moonbeam Native Asset Data {: #native-assets }</h3>
-<p>To get information about each of the Moonbeam network's native protocol asset, such as the <a href="https://docs.moonbeam.network/builders/pallets-precompiles/precompiles/erc20">precompile contract address</a>{target=_blank} and the origin symbol, you can access the <code>moonAsset</code> property:</p>
-<p>=== "Moonbeam"</p>
-<pre><code>```js
-moonbeam.moonAsset
-```
-</code></pre>
-<p>=== "Moonriver"</p>
-<pre><code>```js
-moonriver.moonAsset
-```
-</code></pre>
-<p>=== "Moonbase Alpha"</p>
-<pre><code>```js
-moonbase.moonAsset
-```
-</code></pre>
-<p>An example of the data contained in the <code>moonAsset</code> property is as follows:</p>
-<pre><code class="language-js">moonAsset: {
-  id: '',
-  erc20Id: '{{ networks.moonbeam.precompiles.erc20 }}',
-  originSymbol: 'GLMR',
-  isNative: true
-}
-</code></pre>
-<p>Where the <code>erc20Id</code> refers to the precompile contract address on Moonbeam, the <code>originSymbol</code> is the symbol for the native asset, and <code>isNative</code> is a boolean indicating whether the asset is a native asset.</p>
-<h3 id="moonbeam-native-chain-data-native-chain-data">Moonbeam Native Chain Data {: #native-chain-data }</h3>
-<p>To get information about each of the Moonbeam network's chain information including the chain key, name, WSS endpoint, parachain ID, protocol asset symbols, chain ID, and units per second, you can access the <code>moonChain</code> property:</p>
-<p>=== "Moonbeam"</p>
-<pre><code>```js
-moonbeam.moonChain
-```
-</code></pre>
-<p>=== "Moonriver"</p>
-<pre><code>```js
-moonriver.moonChain
-```
-</code></pre>
-<p>=== "Moonbase Alpha"</p>
-<pre><code>```js
-moonbase.moonChain
-```
-</code></pre>
-<p>An example of the data contained in the <code>moonChain</code> property is as follows:</p>
-<pre><code class="language-js">moonChain: {
-  key: 'Moonbeam',
-  name: 'Moonbeam',
-  ws: 'wss://wss.api.moonbeam.network',
-  parachainId: 2004,
-  decimals: 18,
-  chainId: 1284,
-  unitsPerSecond: 10000000000000000000n
-}
-</code></pre>
-<p>Here, the units per second refer to units of token (in this case Wei) that is charged per second of execution of the XCM message. You can find more information in the <a href="https://docs.moonbeam.network/builders/interoperability/xcm/core-concepts/weights-fees/#moonbeam-reserve-assets">XCM fees page</a>{target=_blank}.</p>
-<h2 id="using-the-sdk-methods-using-the-sdk-methods">Using the SDK Methods {: #using-the-sdk-methods }</h2>
-<p>The Moonbeam SDK provides an API that includes <a href="/v0/reference/#core-sdk-methods">functions</a>{target=_blank} which enable deposits, withdrawals, and subscription to balance information, in addition to a few utility functions.</p>
-<p>Make sure you have <a href="#initializing">initialized</a> the Moonbeam network you want to interact with first. You'll also need to make sure you've <a href="#creating-signers">created signers</a> in order to sign and send deposit and withdraw transfer data.</p>
-<h3 id="deposit-deposit">Deposit {: #deposit }</h3>
-<p>To deposit an asset to Moonbeam from another network, you'll have to first build the transfer data using information from the origin chain before you can send it. You'll need to use a series of deposit methods to build the transfer data.</p>
-<p>The process for building and sending a deposit transfer data is as follows:</p>
-<ol>
-<li>Call the <code>deposit</code> function and pass in the <a href="#asset-symbols">asset symbol</a> or the <a href="#assets">asset object</a> for the asset to be deposited. This will return a <a href="#chains-deposit"><code>chains</code> array</a> containing the asset's origin network information and a <code>from</code> function which will be used to build the transfer data</li>
-<li>Call the <code>from</code> function and pass in the chain key or the chain object of the origin network. You can get the chain object from the <code>chains</code> array returned from the <code>deposit</code> function. You can get the chain key one of two ways: by accessing the key property of the chain object (<code>chain.key</code>) or by directly importing <code>ChainKey</code> from the XCM config package (as seen in the example below)</li>
-<li>Call <code>get</code> and pass in the address of the account on Moonbeam you want to deposit the funds to and a signer or Polkadot address depending on how your code is configured, please refer to the <a href="#get-deposit">Get</a> section for more information. For the purposes of this guide, you'll need to pass in a Polkadot.js <code>Keyring</code> to sign the transaction as created in the <a href="#creating-signers">Creating Signers</a> section. The <code>get</code> function returns a <code>send</code> function which already contains all the necessary info to perform the deposit, and it is used in the next step. In addition, other elements such as information about the origin chain asset and the <code>xc</code> representation of the asset on Moonbeam are returned and might be important for logging purposes</li>
-<li>The <code>send</code> function is used to send the built deposit transfer data along with the amount to send. You can optionally provide a callback function to handle the extrinsic events</li>
-</ol>
-<p>To obtain some of the data required to build the deposit transfer data, such as the asset symbol and chain key of the origin network, you can import <code>AssetSymbol</code> and <code>ChainKey</code> from the <code>@moonbeam-network/xcm-config</code> package.</p>
-<p>An example of the steps described above to deposit DOT from the Polkadot relay chain to xcDOT on Moonbeam is as follows:</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
+const sdkInstance = new Sdk();
+const assets = sdkInstance.assets('polkadot');
 
-async function deposit() {
-  const dot = AssetSymbol.DOT;
-  const polkadot = ChainKey.Polkadot;
-
-  const { chains, from } = moonbeam.deposit(dot);
-
-  console.log(
-    `\nYou can deposit ${dot} from these chains: `,
-    chains.map((chain) =&gt; chain.name)
-  );
-
-  const { asset, sourceBalance, source, min, send } = await from(polkadot).get(
-    'INSERT_MOONBEAM_ADDRESS',
-    polkadotKeyring // See the Get section for other accepted arguments
-  );
-
-  console.log(
-    `Your ${asset.originSymbol} balance in ${source.name}: ${toDecimal(
-      sourceBalance,
-      asset.decimals
-    ).toFixed()}. Minimum transferable amount is: ${toDecimal(
-      min,
-      asset.decimals
-    ).toFixed()}`
-  );
-
-  await send('INSERT_AMOUNT', (event) =&gt; console.log(event));
-}
-
-deposit();
-</code></pre>
-<h4 id="chains-chains-deposit">Chains {: #chains-deposit }</h4>
-<p>As previously mentioned, the <code>deposit</code> function returns a <code>chains</code> array and a <a href="#from"><code>from</code> function</a>. The <code>chains</code> array corresponds to the chains you can deposit the given asset from (for the asset that was initially passed into the <code>deposit</code> function). An example of the <code>chains</code> array is as follows:</p>
-<pre><code class="language-js">chains: [
-  {
-    key: 'Polkadot',
-    name: 'Polkadot',
-    ws: 'wss://rpc.polkadot.io',
-    weight: 1000000000,
-    parachainId: 0
+assets.assets.forEach((asset) =&gt; {
+  const { sourceChains, source } = assets.asset(asset);
+  console.log(`You can send ${asset.originSymbol}...`);
+  if (sourceChains.length &gt; 1) {
+    sourceChains.forEach((sourceChain) =&gt; {
+      const { destinationChains } = source(sourceChain);
+      if (destinationChains.length &gt; 0) {
+        destinationChains.forEach((destination) =&gt; {
+          console.log(`- From ${source.name} to ${destination.name}`);
+        });
+      }
+    });
   }
-]
+});
 </code></pre>
-<h4 id="from-from">From {: #from }</h4>
-<p>The <code>from</code> function requires a chain key to be passed into it for the origin chain in which the assets are sent from and returns a <code>get</code> function.</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
+<h2 id="build-xcm-transfer-data-build-xcm-transfer-data">Build XCM Transfer Data {: #build-xcm-transfer-data }</h2>
+<p>In order to transfer an asset from one chain to another, you'll need to first build the transfer data, which defines the asset to be transferred, the source chain and address, the destination chain and address, and the associated signer for the transaction. Building the transfer data is the first step; in the next section, you'll learn how to use the transfer data to actually transfer the asset.</p>
+<p>To get started, you'll use the <code>Sdk</code> function, which will expose two methods for building the XCM transfer data: <code>assets</code> and <code>getTransferData</code>.</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
 
-...
-
-const dot = AssetSymbol.DOT;
-const polkadot = ChainKey.Polkadot;
-
-const { from } = moonbeam.deposit(dot);
-from(polkadot);
+const sdkInstance = new Sdk();
 </code></pre>
-<h4 id="get-get-deposit">Get {: #get-deposit }</h4>
-<p>The <code>get</code> function requires that you pass in the receiving account on Moonbeam and a <a href="https://docs.moonbeam.network/builders/build/substrate-api/polkadot-js-api">Polkadot signer</a>{target=_blank} or the sending account on Polkadot depending on how you set up your Polkadot signer, and it gets the data required for the deposit.</p>
-<p>If you have a Polkadot compatible signer, you can pass the signer into the <code>init</code> function, then in the <code>get</code> function you can pass the Polkadot address for the second argument:</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
+<p>You can choose either method, as both will return the data necessary to initiate an asset transfer between the source chain and the destination chain. Using <code>assets</code> will provide additional data along the way, including the list of supported assets and, once an asset is selected, the supported source and destination chains that are able to send and receive the asset.</p>
+<p>The process for using <code>assets</code> to build the transfer data is as follows:</p>
+<ol>
+<li>
+<p>Call the <code>assets</code> function and optionally pass in the ecosystem that you want to retrieve a list of assets for or that the asset you want to transfer belongs to. The available ecosystems are: <code>polkadot</code>, <code>kusama</code>, and <code>alphanet-relay</code>. For example:</p>
+<p><code>js
+const { assets, asset } = sdkInstance.assets('polkadot');</code></p>
+<p>This will return a list of the supported assets and the <code>asset</code> function that can be used to define the asset to be transferred</p>
+</li>
+<li>
+<p>Call the <code>asset</code> function and pass in the key or asset object (which includes the key and the origin symbol) to define the asset to be transferred. For example:</p>
+<p><code>js
+// Using the key
+const { sourceChains, source } = asset('dot');</code></p>
+<p>This will return a list of the supported source chains and the <code>source</code> function, which is used to define the source chain to transfer the asset from</p>
+</li>
+<li>
+<p>Call the <code>source</code> function and pass in the key or the chain object (which includes the key, name, and chain type). For example:</p>
+<p><code>js
+// Using the key
+const { destinationChains, destination } = source('polkadot');</code></p>
+<p>This will return a list of the supported destination chains where there is an open XCM channel from the source chain for the given asset and the <code>destination</code> function, which is used to define the destination chain to transfer the asset to</p>
+</li>
+<li>
+<p>Call the <code>destination</code> function and pass in the key or the chain object (which includes the key, name, and chain type). For example:</p>
+<p><code>js
+// Using the key
+const { accounts } = destination('moonbeam');</code></p>
+<p>This will return the <code>accounts</code> function, which is used to define the source and destination addresses and the associated signers for each address</p>
+</li>
+</ol>
+<p>The asset and chain objects are managed within the <code>@moonbeam-network/xcm-config</code> package. You do not need to directly interact with this package as the SDK exposes this data, but there you can find the list of <a href="https://github.com/moonbeam-foundation/xcm-sdk/blob/main/packages/config/src/assets.ts">assets</a>{target=_blank} and <a href="https://github.com/moonbeam-foundation/xcm-sdk/blob/main/packages/config/src/chains.ts">chain data</a>{target=_blank}.</p>
+<p>An example of the steps described above to build the transfer data to transfer DOT from the Polkadot relay chain to Moonbeam is as follows:</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
 
-...
+const sdkInstance = new Sdk();
 
-const dot = AssetSymbol.DOT;
-const polkadot = ChainKey.Polkadot;
+const fromPolkadot = async () =&gt; {
+  const { assets, asset } = sdkInstance.assets();
+  console.log(
+    `The supported assets are: ${assets.map((asset) =&gt; asset.originSymbol)}`
+  );
 
-const { from } = moonbeam.deposit(dot);
-const response = await from(polkadot).get(
-  'INSERT_MOONBEAM_ADDRESS',
-  'INSERT_POLKADOT_ADDRESS',
-);
+  const { sourceChains, source } = asset('dot');
+  console.log(
+    `The supported source chains are: ${sourceChains.map(
+      (chain) =&gt; chain.name
+    )}`
+  );
+
+  const { destinationChains, destination } = source('polkadot');
+  console.log(
+    `The supported destination chains are: ${destinationChains.map(
+      (chain) =&gt; chain.name
+    )}`
+  );
+
+  const { accounts } = destination('moonbeam');
+  const data = await accounts(
+    pair.address,
+    evmSigner.address, // If using viem, use evmSigner.account.address
+    {
+      evmSigner,
+      polkadotSigner: pair,
+    }
+  );
+};
+
+fromPolkadot();
 </code></pre>
-<p>If you have a Polkadot compatible signer but haven't passed it into the <code>init</code> function, then in the <code>get</code> function you can pass in the Polkadot address for the second argument and the Polkadot signer for the third argument:</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
+<p>!!! note
+    For more information on each of the <code>Sdk().assets()</code> builder functions, including the parameters and returned data, please refer to the <a href="/v1/reference#transfer-data-builder-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<p>If you don't need any of the asset or chain information, you can use the <code>getTransferData</code> function:</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
 
-...
+const sdkInstance = new Sdk();
 
-const dot = AssetSymbol.DOT;
-const polkadot = ChainKey.Polkadot;
+const fromPolkadot = async () =&gt; {
+  const data = await sdkInstance.getTransferData({
+    destinationAddress: evmSigner.address, // If using viem, use evmSigner.account.address
+    destinationKeyOrChain: 'moonbeam',
+    keyOrAsset: 'dot',
+    polkadotSigner: pair,
+    sourceAddress: pair.address,
+    sourceKeyOrChain: 'polkadot',
+    evmSigner,
+  });
+};
 
-const { from } = moonbeam.deposit(dot);
-const response = await from(polkadot).get(
-  'INSERT_MOONBEAM_ADDRESS',
-  'INSERT_POLKADOT_ADDRESS',
-  { polkadotSigner },
-);
+fromPolkadot();
 </code></pre>
-<p>If you have a Polkadot Keyring pair, as originally was set up in the <a href="#initializing">Initialization</a> section, you'll pass in the <code>polkadotKeyring</code> as the second parameter:</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
-
-...
-
-const dot = AssetSymbol.DOT;
-const polkadot = ChainKey.Polkadot;
-
-const { from } = moonbeam.deposit(dot);
-const response = await from(polkadot).get(
-  'INSERT_MOONBEAM_ADDRESS',
-  polkadotKeyring,
-);
-</code></pre>
-<p>An example of the response for calling <code>get</code> to send DOT from Polkadot to Moonbeam is as follows:</p>
-<pre><code class="language-js">{
-  asset: {
-    id: '42259045809535163221576417993425387648',
-    erc20Id: '0xffffffff1fcacbd218edc0eba20fc2308c778080',
-    originSymbol: 'DOT',
-    decimals: 10
+<p>!!! note
+    For more information on the <code>Sdk().getTransferData()</code> function, including the parameters and returned data, please refer to the <a href="/v1/reference#core-sdk-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<p>As previously mentioned, regardless of which method you use to build the transfer data, you'll generate the same output.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// Send DOT from Polkadot to Moonbeam
+// data
+{
+  destination: {
+    balance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    chain: l {
+      ecosystem: 'polkadot',
+      isTestChain: false,
+      key: 'moonbeam',
+      name: 'Moonbeam',
+      type: 'evm-parachain',
+      assetsData: [Map],
+      genesisHash: '0xfe58ea77779b7abda7da4ec526d14db9b1e9cd40a217c34892af80a9b332b76d',
+      parachainId: 2004,
+      ss58Format: 1284,
+      usesChainDecimals: false,
+      weight: 1000000000,
+      ws: 'wss://wss.api.moonbeam.network',
+      id: 1284,
+      rpc: 'https://rpc.api.moonbeam.network'
+    },
+    existentialDeposit: e {
+      key: 'glmr',
+      originSymbol: 'GLMR',
+      amount: 0n,
+      decimals: 18,
+      symbol: 'GLMR'
+    },
+    fee: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 33068783n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    min: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    }
   },
-  existentialDeposit: 10000000000n,
-  min: 33068783n,
-  moonChainFee: {
+  getEstimate: [Function: getEstimate],
+  isSwapPossible: true,
+  max: e {
+    key: 'dot',
+    originSymbol: 'DOT',
+    amount: 0n,
+    decimals: 10,
+    symbol: 'DOT'
+  },
+  min: e {
+    key: 'dot',
+    originSymbol: 'DOT',
     amount: 33068783n,
     decimals: 10,
     symbol: 'DOT'
   },
-  native: {
-    id: '42259045809535163221576417993425387648',
-    erc20Id: '0xffffffff1fcacbd218edc0eba20fc2308c778080',
-    originSymbol: 'DOT',
-    decimals: 10
-  },
-  origin: {
-    key: 'Polkadot',
-    name: 'Polkadot',
-    ws: 'wss://rpc.polkadot.io',
-    weight: 1000000000,
-    parachainId: 0
-  },
   source: {
-    key: 'Polkadot',
-    name: 'Polkadot',
-    ws: 'wss://rpc.polkadot.io',
-    weight: 1000000000,
-    parachainId: 0
+    balance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    chain: m {
+      ecosystem: 'polkadot',
+      isTestChain: false,
+      key: 'polkadot',
+      name: 'Polkadot',
+      type: 'parachain',
+      assetsData: Map(0) {},
+      genesisHash: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3',
+      parachainId: 0,
+      ss58Format: 0,
+      usesChainDecimals: false,
+      weight: 1000000000,
+      ws: 'wss://rpc.polkadot.io'
+    },
+    destinationFeeBalance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    existentialDeposit: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 10000000000n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    fee: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 169328990n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    feeBalance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    max: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    min: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    }
   },
-  sourceBalance: 0n,
-  sourceFeeBalance: undefined,
-  sourceMinBalance: 0n,
-  getFee: [AsyncFunction: getFee],
-  send: [AsyncFunction: send]
+  swap: [AsyncFunction: swap],
+  transfer: [AsyncFunction: transfer]
 }
+```
 </code></pre>
-<p>Where the returned values are as follows:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Value</th>
-<th style="text-align: center;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>asset</code></td>
-<td style="text-align: center;">the <a href="#assets">asset</a> to be transferred</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>existentialDeposit</code></td>
-<td style="text-align: center;">the <a href="https://support.polkadot.network/support/solutions/articles/65000168651-what-is-the-existential-deposit-#:~:text=On%20the%20Polkadot%20network%2C%20an,the%20Existential%20Deposit%20(ED).">existential deposit</a>{target=_blank}, or the minimum amount an address must <br> hold to be considered active if one exists, otherwise <code>0n</code> is returned</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>min</code></td>
-<td style="text-align: center;">the minimum transferrable amount</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>moonChainFee</code></td>
-<td style="text-align: center;">the <a href="#assets">asset</a> and amount that is needed to pay for Moonbeam's XCM fees. <br> If different from the <code>asset</code> to be transferred, the fee will be sent in this <br> asset in addition to the <code>asset</code> to be transferred (as of <a href="https://github.com/moonbeam-foundation/xcm-sdk/releases/tag/v0.4.0">v0.4.0</a>{target=_blank})</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>native</code></td>
-<td style="text-align: center;">the native <a href="#assets">asset</a> of the source chain</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>origin</code></td>
-<td style="text-align: center;">the chain information for where the asset being transferred natively originates from</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>source</code></td>
-<td style="text-align: center;">the chain information for where the asset being transferred is sent from</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>sourceBalance</code></td>
-<td style="text-align: center;">the balance of the asset being transferred on the source chain</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>sourceFeeBalance</code></td>
-<td style="text-align: center;">the balance in the source chain's native asset to pay a fee for the asset <br> to be transferred if applicable, otherwise <code>undefined</code> is returned</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>sourceMinBalance</code></td>
-<td style="text-align: center;">the minimum balance of the asset being transferred on the source chain</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>getFee</code></td>
-<td style="text-align: center;">a function that <a href="#get-fee-deposit">estimates the fees</a> for withdrawing a given amount</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>send</code></td>
-<td style="text-align: center;">a function that <a href="#send-deposit">sends</a> the deposit transfer data</td>
-</tr>
-</tbody>
-</table>
-<h4 id="send-send-deposit">Send {: #send-deposit }</h4>
-<p>When calling <code>send</code>, you will actually send the deposit transfer data that has been built using the <code>deposit</code>, <code>from</code>, and <code>get</code> functions. You simply have to pass in a specified amount to send and an optional callback for handling the extrinsic event. For example, entering <code>10000000000n</code> will send <code>1</code> DOT from Polkadot to Moonbeam, as DOT has 10 decimals.</p>
-<p>You can refer back to the example in the <a href="#deposit">Deposit</a> section to see how the <code>send</code> function is used.</p>
-<h4 id="get-fee-get-fee-deposit">Get Fee {: #get-fee-deposit }</h4>
-<p>The <code>getFee</code> function estimates the fees for transferring a given amount of the asset specified in the <code>deposit</code> function. An example of getting the fee in Polkadot for transferring DOT to Moonbeam is as follows:</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
-import { init } from '@moonbeam-network/xcm-sdk';
-import { toDecimal } from '@moonbeam-network/xcm-utils';
+<p>As you may have noticed in the example response, the transfer data contains information on the asset to be transferred, the source chain, and the destination chain. In addition, a few functions have been exposed:</p>
+<ul>
+<li><code>swap()</code> - returns the transfer data necessary to swap the asset from the destination chain back to the source chain</li>
+<li><code>transfer()</code> - transfers a given amount of the asset from the source chain to the destination chain</li>
+<li><code>getEstimate()</code> - returns an estimated amount of the asset that will be received on the destination chain, less any destination fees</li>
+</ul>
+<h2 id="transfer-an-asset-transfer-an-asset">Transfer an Asset {: #transfer-an-asset }</h2>
+<p>Now that you've built the transfer data, you can go ahead and transfer the asset from the source chain to the destination chain. To do so, you can use the <code>transfer</code> function, but first you'll need to specify an amount to send. You can specify the amount in integer or decimal format. For example, if you wanted to send 0.1 DOT, you could use <code>1000000000n</code> or <code>'0.1'</code>. You can use <a href="/v1/reference#utility-functions">asset conversion methods</a>{target=_blank}, like <code>toDecimal</code> to convert the asset to decimal format.</p>
+<p>For this example, you can transfer twice the minimum amount required of DOT:</p>
+<pre><code class="language-js">...
 
-// ...
-
-async function getDepositFee() {
-  const dot = AssetSymbol.DOT;
-  const polkadot = ChainKey.Polkadot;
-
-  const { from } = moonbeam.deposit(dot);
-  const { asset, getFee } = await from(polkadot).get(
-    'INSERT_MOONBEAM_ADDRESS',
-    polkadotKeyring // See the Get section for other accepted arguments
-  );
-
-  const fee = await getFee('INSERT_AMOUNT');
-  console.log(
-    `Fee to deposit is estimated to be: ${toDecimal(
-      fee,
-      asset.decimals
-    ).toFixed()} ${dot}`
-  );
-}
-
-getDepositFee();
+const amount = data.min.toDecimal() * 2;
+console.log(`Sending from ${data.source.chain.name} amount: ${amount}`);
+const hash = await data.transfer(amount);
+console.log(`${data.source.chain.name} tx hash: ${hash}`);
 </code></pre>
-<h3 id="withdraw-withdraw">Withdraw {: #withdraw }</h3>
-<p>To withdraw an asset from Moonbeam to send back to the origin network, you'll have to first build the transfer data using information from the origin chain before you can send it. To do so, you'll take the following steps:</p>
-<ol>
-<li>Call the <code>withdraw</code> function and pass in the <a href="#asset-symbols">asset symbol</a> or the <a href="#assets">asset object</a>. This will return a <a href="#chains-withdraw"><code>chains</code> array</a> containing the asset's origin network information and a <code>to</code> function which will be used to build the transfer data</li>
-<li>Call the <code>to</code> function and pass in the chain key of the origin network. You can get the chain object from the <code>chains</code> array returned from the <code>withdraw</code> function. You can get the chain key one of two ways: by accessing the key property of the chain object (<code>chain.key</code>) or by directly importing <code>ChainKey</code> from the XCM config package (as seen in the example below)</li>
-<li>Call <code>get</code> and pass in the address of the account on the origin network you want to withdraw the funds from and pass in the <a href="#creating-signers">Ethers signer</a> if you haven't already done so during <a href="#initializing">intialization</a>. This will return information about the origin (destination) chain asset, the <code>xc</code> representation of the asset on Moonbeam. This will return a <code>send</code> function which already contains all the necessary info to perform the withdrawal, and it is used in the next step. In addition, other elements, such as information about the asset, are returned and might be important for logging purposes</li>
-<li>The <code>send</code> function is used to send the built withdraw transfer data along with the amount to send. You can optionally provide a callback function to handle the extrinsic events</li>
-</ol>
-<p>To obtain some of the data required to build the withdraw transfer data, such as the asset symbol and chain key of the origin network, you can import <code>AssetSymbol</code> and <code>ChainKey</code> from the <code>@moonbeam-network/xcm-config</code> package.</p>
-<p>An example of the steps described above to withdraw xcDOT from Moonbeam to send back to DOT on Polkadot is as follows:</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
+<p>As seen in the above snippet, the <code>transfer</code> function returns a transaction hash on the source chain.</p>
+<p>!!! note
+    For more information on the parameters and returned data for <code>transfer</code>, please refer to the <a href="/v1/reference#transfer-data-consumer-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<h2 id="swap-an-asset-swap-an-asset">Swap an Asset {: #swap-an-asset}</h2>
+<p>To swap an asset, you can use the same transfer data and call <code>data.swap()</code> to switch the source and destination chain information. From there, you can simply call the <code>transfer</code> function to execute the swap.</p>
+<pre><code class="language-js">...
 
-async function withdraw() {
-  const dot = AssetSymbol.DOT;
-  const polkadot = ChainKey.Polkadot;
-
-  const { chains, to } = moonbeam.withdraw(dot);
-
-  console.log(
-    `\nYou can withdraw ${dot} to these chains: `,
-    chains.map((chain) =&gt; chain.name)
-  );
-
-  const { asset, destination, destinationBalance, min, send } = await to(
-    polkadot
-  ).get('INSERT_POLKADOT_ADDRESS', {
-    ethersSigner: signer, // Only required if you didn't pass the signer in on initialization
-  });
-
-  console.log(
-    `Your ${asset.originSymbol} balance in ${destination.name}: ${toDecimal(
-      destinationBalance,
-      asset.decimals
-    ).toFixed()}. Minimum transferable amount is: ${toDecimal(
-      min,
-      asset.decimals
-    ).toFixed()}`
-  );
-
-  await send('INSERT_AMOUNT', (event) =&gt; console.log(event));
-}
-
-withdraw();
+const swapData = await data.swap();
+const amount = swapData.min.toDecimal() * 2;
+console.log(`Sending from ${swapData.source.chain.name} amount: ${amount}`);
+const hash = await swapData.transfer(amount);
+console.log(`${swapData.source.chain.name} tx hash: ${hash}`);
 </code></pre>
-<h4 id="chains-chains-withdraw">Chains {: #chains-withdraw }</h4>
-<p>As previously mentioned, the <code>withdraw</code> function returns a <code>chains</code> array and a <code>to</code> function. The <code>chains</code> array corresponds to the chains you can withdraw the given asset from (for the asset that was initially passed into the <code>withdraw</code> function). An example of the <code>chains</code> array is as follows:</p>
-<pre><code class="language-js">chains: [
-  {
-    key: 'Polkadot',
-    name: 'Polkadot',
-    ws: 'wss://rpc.polkadot.io',
-    weight: 1000000000,
-    parachainId: 0
-  }
-]
-</code></pre>
-<h4 id="to-to">To {: #to }</h4>
-<p>The <code>to</code> function requires a chain key to be passed into it for the origin chain in which the assets are being withdrawn back to and returns a <code>get</code> function.</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
-
-...
-
-const dot = AssetSymbol.DOT;
-const polkadot = ChainKey.Polkadot;
-
-const { to } = moonbeam.withdraw(dot);
-
-to(polkadot);
-</code></pre>
-<h4 id="get-get-withdraw">Get {: #get-withdraw }</h4>
-<p>The <code>get</code> function requires that you pass in the receiving account on the destination chain and the <a href="#creating-signers">Ethers signer</a> for the sending account on Moonbeam, and it gets the data required for the withdraw.</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
-
-...
-
-const dot = AssetSymbol.DOT;
-const polkadot = ChainKey.Polkadot;
-
-const { to } = moonbeam.deposit(dot);
-const response =  await to(
-    polkadot,
-  ).get('INSERT_POLKADOT_ADDRESS',
-  { ethersSigner: signer } // Only required if you didn't pass the signer in on initialization
-)
-</code></pre>
-<p>An example of the response for calling <code>get</code> to send xcDOT from Moonbeam back to DOT on Polkadot is as follows:</p>
-<pre><code class="language-js">{
-  asset: {
-    id: '42259045809535163221576417993425387648',
-    erc20Id: '0xffffffff1fcacbd218edc0eba20fc2308c778080',
-    originSymbol: 'DOT',
-    decimals: 10
-  },
+<p>The <code>swap</code> function returns the transfer data with the original source chain and destination chain swapped. Using the previous example of sending DOT from Polkadot to Moonbeam, the swap transfer data would send DOT from Moonbeam to Polkadot.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// swapData
+{
   destination: {
-    key: 'Polkadot',
-    name: 'Polkadot',
-    ws: 'wss://rpc.polkadot.io',
-    weight: 1000000000,
-    parachainId: 0
+    balance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    chain: m {
+      ecosystem: 'polkadot',
+      isTestChain: false,
+      key: 'polkadot',
+      name: 'Polkadot',
+      type: 'parachain',
+      assetsData: Map(0) {},
+      genesisHash: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3',
+      parachainId: 0,
+      ss58Format: 0,
+      usesChainDecimals: false,
+      weight: 1000000000,
+      ws: 'wss://rpc.polkadot.io'
+    },
+    existentialDeposit: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 10000000000n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    fee: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 169328990n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    feeBalance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    max: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    min: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    }
   },
-  destinationBalance: 0n,
-  destinationFee: 520000000n,
-  existentialDeposit: 10000000000n,
-  min: 10520000000n,
-  minXcmFeeAsset: {
+  getEstimate: [Function: getEstimate],
+  isSwapPossible: true,
+  max: e {
+    key: 'dot',
+    originSymbol: 'DOT',
     amount: 0n,
     decimals: 10,
-    symbol: &quot;DOT&quot;,
+    symbol: 'DOT'
   },
-  native: {
-    id: '42259045809535163221576417993425387648',
-    erc20Id: '0xffffffff1fcacbd218edc0eba20fc2308c778080',
+  min: e {
+    key: 'dot',
     originSymbol: 'DOT',
-    decimals: 10
+    amount: 33068783n,
+    decimals: 10,
+    symbol: 'DOT'
   },
-  origin: {
-    key: 'Polkadot',
-    name: 'Polkadot',
-    ws: 'wss://rpc.polkadot.io',
-    weight: 1000000000,
-    parachainId: 0
+  source: {
+    balance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    chain: l {
+      ecosystem: 'polkadot',
+      isTestChain: false,
+      key: 'moonbeam',
+      name: 'Moonbeam',
+      type: 'evm-parachain',
+      assetsData: [Map],
+      genesisHash: '0xfe58ea77779b7abda7da4ec526d14db9b1e9cd40a217c34892af80a9b332b76d',
+      parachainId: 2004,
+      ss58Format: 1284,
+      usesChainDecimals: false,
+      weight: 1000000000,
+      ws: 'wss://wss.api.moonbeam.network',
+      id: 1284,
+      rpc: 'https://rpc.api.moonbeam.network'
+    },
+    destinationFeeBalance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    existentialDeposit: e {
+      key: 'glmr',
+      originSymbol: 'GLMR',
+      amount: 0n,
+      decimals: 18,
+      symbol: 'GLMR'
+    },
+    fee: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 33068783n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    min: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    }
   },
-  originXcmFeeAssetBalance: undefined,
-  getFee: [AsyncFunction: getFee],
-  send: [AsyncFunction: send]
+  swap: [AsyncFunction: swap],
+  transfer: [AsyncFunction: transfer]
 }
-</code></pre>
-<p>Where the returned values are as follows:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Value</th>
-<th style="text-align: center;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>asset</code></td>
-<td style="text-align: center;">the <a href="#assets">asset</a> to be transferred</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>destination</code></td>
-<td style="text-align: center;">the chain information for where the asset is being transferred to</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>destinationBalance</code></td>
-<td style="text-align: center;">the balance of the asset being transferred on the destination chain</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>destinationFee</code></td>
-<td style="text-align: center;">the fee for the asset to be transferred on the destination chain</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>existentialDeposit</code></td>
-<td style="text-align: center;">the <a href="https://support.polkadot.network/support/solutions/articles/65000168651-what-is-the-existential-deposit-#:~:text=On%20the%20Polkadot%20network%2C%20an,the%20Existential%20Deposit%20(ED).">existential deposit</a>{target=_blank}, or the minimum amount an address must <br> hold to be considered active if one exists, otherwise <code>0n</code> is returned</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>min</code></td>
-<td style="text-align: center;">the minimum transferable amount of the asset being transferred</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>minXcmFeeAsset</code></td>
-<td style="text-align: center;">the minimum transferable amount of the asset that needs to be sent along to pay for the fees</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>native</code></td>
-<td style="text-align: center;">the native <a href="#assets">asset</a> of the source chain</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>origin</code></td>
-<td style="text-align: center;">the chain information for where the asset being transferred natively originates from</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>originXcmFeeAssetBalance</code></td>
-<td style="text-align: center;">the balance in the origin account of the asset that is sent along with the transfer to pay for the fees, if any</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>getFee</code></td>
-<td style="text-align: center;">a function that <a href="#get-fee-withdraw">estimates the fees</a> for depositing a given amount</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>send</code></td>
-<td style="text-align: center;">a function that <a href="#send-withdraw">sends</a> the withdraw transfer data</td>
-</tr>
-</tbody>
-</table>
-<h4 id="send-send-withdraw">Send {: #send-withdraw }</h4>
-<p>When calling <code>send</code>, you will actually send the withdraw transfer data that has been built using the <code>withdraw</code>, <code>to</code>, and <code>get</code> functions. You simply have to pass in a specified amount to send and an optional callback for handling the extrinsic event. For example, entering <code>10000000000n</code> will send <code>1</code> xcDOT on Moonbeam back to DOT on Polkadot.</p>
-<p>You can refer back to the example in the <a href="#withdraw">Withdraw</a> section to see how the <code>send</code> function is used.</p>
-<h4 id="get-fee-get-fee-withdraw">Get Fee {: #get-fee-withdraw }</h4>
-<p>The <code>getFee</code> function estimates the fees for transferring a given amount of the asset specified in the <code>withdraw</code> function. An example of getting the fee in GLMR for transferring xcDOT from Moonbeam back to DOT on Polkadot is as follows:</p>
-<pre><code class="language-js">import { AssetSymbol, ChainKey } from '@moonbeam-network/xcm-config';
-import { init } from '@moonbeam-network/xcm-sdk';
-import { toDecimal } from '@moonbeam-network/xcm-utils';
-
-// ...
-
-async function getWithdrawFee() {
-  const dot = AssetSymbol.DOT;
-  const polkadot = ChainKey.Polkadot;
-
-  const { to } = moonbeam.withdraw(dot);
-  const { asset, getFee } = await from(polkadot).get(
-    'INSERT_POLKADOT_ADDRESS',
-    { ethersSigner } // Only required if you didn't pass the signer in on initialization
-  );
-
-  const fee = await getFee('INSERT_AMOUNT');
-  console.log(
-    `Fee to deposit is estimated to be: ${toDecimal(
-      fee,
-      moonbeam.moonChain.decimals
-    ).toFixed()} ${moonbeam.moonAsset.originSymbol}`
-  );
-}
-
-getWithdrawFee();
-</code></pre>
-<h3 id="subscribe-to-assets-balance-information-subscribe">Subscribe to Assets Balance Information {: #subscribe }</h3>
-<p>To subscribe to balance information and get a given account's latest balance for each of the supported assets, you can use the <code>subscribeToAssetsBalanceInfo</code> function and pass in the address you want to get the balance for and a callback function to handle the data:</p>
-<p>=== "Moonbeam"</p>
-<pre><code>```js
-moonbeam.subscribeToAssetsBalanceInfo('INSERT_ADDRESS', cb);
 ```
 </code></pre>
-<p>=== "Moonriver"</p>
-<pre><code>```js
-moonriver.subscribeToAssetsBalanceInfo('INSERT_ADDRESS', cb);
-```
-</code></pre>
-<p>=== "Moonbase Alpha"</p>
-<pre><code>```js
-moonbase.subscribeToAssetsBalanceInfo('INSERT_ADDRESS', cb);
-```
-</code></pre>
-<p>The following example retrieves the balance information for a given account on Moonbeam and prints the balance for each of the supported assets to the console:</p>
-<pre><code class="language-js">const unsubscribe = await moonbeam.subscribeToAssetsBalanceInfo(
-  'INSERT_MOONBEAM_ADDRESS',
-  (balances) =&gt; {
-    balances.forEach(({ asset, balance, origin }) =&gt; {
-      console.log(
-        `${balance.symbol}: ${toDecimal(
-          balance.balance,
-          balance.decimals
-        ).toFixed()} (${origin.name} ${asset.originSymbol})`
-      );
-    });
-  }
+<p>!!! note
+    For more information on the parameters and returned data for <code>swap</code>, please refer to the <a href="/v1/reference#transfer-data-consumer-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<h2 id="get-an-estimate-of-the-asset-to-be-received-on-the-destination-chain-get-estimate">Get an Estimate of the Asset to be Received on the Destination Chain {: #get-estimate }</h2>
+<p>When you send an XCM message, you typically pay fees on the destination chain to execute the XCM instructions. Before you transfer the asset, you can use the <code>getEstimate</code> function to calculate an estimated amount of the asset that will be received on the destination chain, minus any fees.</p>
+<p>The <code>getEstimate</code> function is tied to a specific transfer request as it is based on the asset being transferred and the destination chain fees, so you'll need to create the <a href="#build-xcm-transfer-data">transfer data</a> first.</p>
+<p>You'll need to provide the amount to be transferred to the <code>getEstimate</code> function. In the following example, you'll get the estimated amount of DOT that will be received on Moonbeam when 0.1 DOT is transferred. You can specify the amount in integer (<code>1000000000n</code>) or decimal (<code>'0.1'</code>) format.</p>
+<pre><code class="language-js">...
+
+const amount = '0.1';
+const estimatedAmount = data.getEstimate(amount);
+
+console.log(
+  `The estimated amount of ${
+    data.source.balance.originSymbol
+  } to be received on ${
+    data.destination.chain.name
+  } is: ${estimatedAmount.toDecimal()} ${data.destination.balance.symbol}`
 );
-
-unsubscribe();
 </code></pre>
-<h3 id="utility-functions-sdk-utils">Utility Functions {: #sdk-utils }</h3>
-<p>There are utility functions in both the XCM SDK and the XCM Utilities packages. The XCM SDK provides the following SDK-related utility functions:</p>
-<ul>
-<li><a href="#deposit-check"><code>isXcmSdkDeposit</code></a></li>
-<li><a href="#withdraw-check"><code>isXcmSdkWithdraw</code></a></li>
-</ul>
-<p>And the XCM Utilities package provides the following generic utility functions:</p>
-<ul>
-<li><a href="#decimals"><code>toDecimal</code></a></li>
-<li><a href="#decimals"><code>toBigInt</code></a></li>
-<li><a href="#decimals"><code>hasDecimalOverflow</code></a></li>
-</ul>
-<h4 id="check-if-transfer-data-is-for-a-deposit-deposit-check">Check if Transfer Data is for a Deposit  {: #deposit-check }</h4>
-<p>To determine whether transfer data is for a deposit, you can pass in transfer data to the <code>isXcmSdkDeposit</code> function and a boolean will be returned. If <code>true</code> is returned the transfer data is for a deposit, and <code>false</code> is returned if it is not.</p>
-<p>The following are some examples:</p>
-<pre><code class="language-js">import { init, isXcmSdkDeposit } from '@moonbeam-network/xcm-sdk';
-
+<p>The <code>getEstimate</code> function returns the estimated amount along with information on the asset being transferred.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// estimatedAmount
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 966931217n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+```
+</code></pre>
+<p>!!! note
+    For more information on the parameters and returned data for <code>getEstimate</code>, please refer to the <a href="/v1/reference#transfer-data-consumer-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<h2 id="get-transfer-minimum-and-maximum-amounts-transfer-min-max-amounts">Get Transfer Minimum and Maximum Amounts {: #transfer-min-max-amounts }</h2>
+<p>You can use <a href="#build-xcm-transfer-data">transfer data</a> to retrieve the minimum and maximum amount of an asset that can be transferred. To do so, you'll access the <code>min</code> and <code>max</code> properties of the asset being transferred:</p>
+<p>=== "Minimum"</p>
+<pre><code>```js
 ...
 
-const deposit = moonbeam.deposit(moonbeam.symbols[0]);
-console.log(isXcmSdkDeposit(deposit)); // Returns true
-</code></pre>
-<pre><code class="language-js">import { init, isXcmSdkDeposit } from '@moonbeam-network/xcm-sdk';
+const amount = data.min.toDecimal();
+const symbol = data.min.originSymbol;
 
+console.log(`You can send min: ${amount} ${symbol}`);
+```
+</code></pre>
+<p>=== "Maximum"</p>
+<pre><code>```js
 ...
 
-const withdraw = moonbeam.withdraw(moonbeam.symbols[0]);
-console.log(isXcmSdkDeposit(withdraw)); // Returns false
+const amount = data.max.toDecimal();
+const symbol = data.max.originSymbol;
+
+console.log(`You can send max: ${amount} ${symbol}`);
+```
 </code></pre>
-<h4 id="check-if-transfer-data-is-for-a-withdrawal-withdraw-check">Check if Transfer Data is for a Withdrawal {: #withdraw-check }</h4>
-<p>To determine whether transfer data is for a withdrawal, you can pass in transfer data to the <code>isXcmSdkWithdraw</code> function and a boolean will be returned. If <code>true</code> is returned the transfer data is for a withdrawal, and <code>false</code> is returned if it is not.</p>
-<p>The following are some examples:</p>
-<pre><code class="language-js">import { init, isXcmSdkWithdraw } from '@moonbeam-network/xcm-sdk';
-
-...
-
-const withdraw = moonbeam.withdraw(moonbeam.symbols[0]);
-console.log(isXcmSdkWithdraw(withdraw)); // Returns true
+<p>The <code>min</code> and <code>max</code> properties return the minimum and maximum amount of the asset that can be transferred, along with information on the asset. If the source account does not hold a balance of the chosen asset, the <code>data.max</code> amount will be <code>0n</code>.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// data.min
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 33068783n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+// data.max
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 0n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+```
 </code></pre>
-<pre><code class="language-js">import { init, isXcmSdkWithdraw } from '@moonbeam-network/xcm-sdk';
+<p>!!! note
+    For more information on assets and asset amounts, please refer to the <a href="/v1/reference#assets">XCM SDK Reference</a>{target=_blank}.</p>
+<h2 id="get-transfer-fees-get-transfer-fees">Get Transfer Fees {: #get-transfer-fees }</h2>
+<p>The <a href="#build-xcm-transfer-data">transfer data</a> provides information on transfer fees for the source and destination chains. You can retrieve the fees using the following snippet:</p>
+<pre><code class="language-js">...
+const sourceChain = data.source.chain.name;
+const sourceFee = data.source.fee;
 
-...
+const destinationChain = data.destination.chain.name;
+const destinationFee = data.destination.fee;
 
-const deposit = moonbeam.deposit(moonbeam.symbols[0]);
-console.log(isXcmSdkDeposit(deposit)); // Returns false
+console.log(
+  `You will pay ${sourceFee.toDecimal()} ${
+    sourceFee.symbol
+  } fee on ${
+    sourceChain
+  } and ${destinationFee.toDecimal()} ${
+    destinationFee.symbol
+  } fee on ${destinationChain}.`
+);
 </code></pre>
-<h4 id="convert-balance-to-decimal-or-bigint-decimals">Convert Balance to Decimal or BigInt {: #decimals }</h4>
-<p>To convert a balance to decimal format, you can use the <code>toDecimal</code> function, which returns a given number in decimal format based on the number of decimals provided. You can optionally pass in a value for a third argument to dictate the maximum number of decimal places used; otherwise, the default is <code>6</code>; and a fourth argument that dictates the <a href="https://mikemcl.github.io/big.js/#rm">rounding method</a>{target=_blank} of the number.
-The <code>toDecimal</code> function returns a Big number type that you can convert to a number or string using its methods <code>toNumber</code>, <code>toFixed</code>, <code>toPrecision</code>, and <code>toExponential</code>. We recommend using them as a string, since big numbers or numbers with a lot of decimals can lose precision when using number types.</p>
-<p>To convert from decimal number back to BigInt, you can use the <code>toBigInt</code> function which returns a given number in BigInt format based on the number of decimals provided.</p>
-<p>For example, to convert a balance on Moonbeam from Wei to Glimmer you can use the following code:</p>
-<pre><code class="language-js">import { toDecimal, toBigInt } from '@moonbeam-network/xcm-utils';
-
-const balance = toDecimal(3999947500000000000n, 18).toFixed();
-console.log(balance); // Returns '3.999947'
-
-const big = toBigInt('3.999947', 18);
-console.log(big); // Returns 3999947000000000000n
+<p>The <code>fee</code> property returns the amount of fees to be paid along with information on the asset.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// sourceFee
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 169328990n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+// destinationFee
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 33068783n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+```
 </code></pre>
-<p>You can also use <code>hasDecimalOverflow</code> to make sure that a given number does not have more decimal places than allowed. This is helpful for form inputs.</p>
+<p>!!! note
+    For more information on assets and asset amounts, including fees, please refer to the <a href="/v1/reference#assets">XCM SDK Reference</a>{target=_blank}.</p>
+<p>--8&lt;-- 'text/_disclaimers/third-party-content.md'</p>
 
 
 
