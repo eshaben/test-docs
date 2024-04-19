@@ -1,0 +1,1658 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Use the Moonbeam XCM SDK to easily transfer cross-chain assets between parachains or between a parachain and relay chain within the Polkadot/Kusama ecosystems.">
+      
+      
+      
+        <link rel="canonical" href="https://eshaben.github.io/test-docs/0.1/v1/xcm-sdk/">
+      
+      
+        <link rel="prev" href="../reference/">
+      
+      
+      
+      <link rel="icon" href="/assets/images/Moonbeam-Favicon-50.webp">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>XCM SDK v1 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#using-the-moonbeam-xcm-sdk-v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  <img src="/assets/images/moonbeam-logo.webp" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              XCM SDK v1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  <img src="/assets/images/moonbeam-logo.webp" alt="logo">
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    v0
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            v0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XCM SDK Guides for v0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xcm-sdk.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    v1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            v1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XCM SDK Guides
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Using the SDK
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Using the SDK
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction {: #introduction }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-xcm-sdk-install-the-xcm-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install the XCM SDK {: #install-the-xcm-sdk }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-signers-create-signers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Signers {: #create-signers }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Signers {: #create-signers }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-evm-signer-create-a-evm-signer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a EVM Signer {: #create-a-evm-signer }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-polkadot-signer-create-a-polkadot-signer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Polkadot Signer {: #create-a-polkadot-signer }
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-asset-and-chain-data-asset-chain-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Asset and Chain Data {: #asset-chain-data }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Asset and Chain Data {: #asset-chain-data }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-supported-assets-get-list-of-supported-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get List of Supported Assets {: #get-list-of-supported-assets }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-supported-assets-by-ecosystem-get-supported-assets-by-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get List of Supported Assets by Ecosystem {: #get-supported-assets-by-ecosystem }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-supported-chains-by-asset-get-list-of-supported-assets-by-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get List of Supported Chains by Asset {: #get-list-of-supported-assets-by-chain }
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-xcm-transfer-data-build-xcm-transfer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build XCM Transfer Data {: #build-xcm-transfer-data }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-an-asset-transfer-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer an Asset {: #transfer-an-asset }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swap-an-asset-swap-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swap an Asset {: #swap-an-asset}
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-an-estimate-of-the-asset-to-be-received-on-the-destination-chain-get-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get an Estimate of the Asset to be Received on the Destination Chain {: #get-estimate }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-transfer-minimum-and-maximum-amounts-transfer-min-max-amounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Transfer Minimum and Maximum Amounts {: #transfer-min-max-amounts }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-transfer-fees-get-transfer-fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Transfer Fees {: #get-transfer-fees }
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction {: #introduction }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-xcm-sdk-install-the-xcm-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install the XCM SDK {: #install-the-xcm-sdk }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-signers-create-signers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Signers {: #create-signers }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Signers {: #create-signers }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-evm-signer-create-a-evm-signer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a EVM Signer {: #create-a-evm-signer }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-polkadot-signer-create-a-polkadot-signer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Polkadot Signer {: #create-a-polkadot-signer }
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-asset-and-chain-data-asset-chain-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Asset and Chain Data {: #asset-chain-data }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Asset and Chain Data {: #asset-chain-data }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-supported-assets-get-list-of-supported-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get List of Supported Assets {: #get-list-of-supported-assets }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-supported-assets-by-ecosystem-get-supported-assets-by-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get List of Supported Assets by Ecosystem {: #get-supported-assets-by-ecosystem }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-list-of-supported-chains-by-asset-get-list-of-supported-assets-by-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get List of Supported Chains by Asset {: #get-list-of-supported-assets-by-chain }
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-xcm-transfer-data-build-xcm-transfer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build XCM Transfer Data {: #build-xcm-transfer-data }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-an-asset-transfer-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer an Asset {: #transfer-an-asset }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swap-an-asset-swap-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swap an Asset {: #swap-an-asset}
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-an-estimate-of-the-asset-to-be-received-on-the-destination-chain-get-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get an Estimate of the Asset to be Received on the Destination Chain {: #get-estimate }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-transfer-minimum-and-maximum-amounts-transfer-min-max-amounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Transfer Minimum and Maximum Amounts {: #transfer-min-max-amounts }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-transfer-fees-get-transfer-fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Transfer Fees {: #get-transfer-fees }
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="using-the-moonbeam-xcm-sdk-v1">Using the Moonbeam XCM SDK: v1</h1>
+<h2 id="introduction-introduction">Introduction {: #introduction }</h2>
+<p>The Moonbeam XCM SDK enables developers to easily transfer assets between chains, either between parachains or between a parachain and the relay chain, within the Polkadot/Kusama ecosystem. With the SDK, you don't need to worry about determining the multilocation of the origin or destination assets or which extrinsics are used on which networks to send XCM transfers.</p>
+<p>The XCM SDK offers helper functions, that provide a very simple interface to execute XCM transfers between chains in the Polkadot/Kusama ecosystem. In addition, the XCM config package allows any parachain project to add their information in a standard way, so they can be immediately supported by the XCM SDK.</p>
+<p>For an overview of the available methods and interfaces in the Moonbeam XCM SDK, please refer to the <a href="/v1/reference">Reference</a>{target=_blank} page.</p>
+<p>The examples in this guide are shown on Moonbeam, but can be adapted to be used on Moonriver or Moonbase Alpha.</p>
+<h2 id="install-the-xcm-sdk-install-the-xcm-sdk">Install the XCM SDK {: #install-the-xcm-sdk }</h2>
+<p>To get started with the Moonbeam XCM SDK, you'll need to first install the SDK:</p>
+<pre><code class="language-bash">npm install @moonbeam-network/xcm-sdk
+</code></pre>
+<p>You'll also need to install a few additional dependencies that you'll use to interact with the SDK in this guide. You'll need the Polkadot.js API to create a Polkadot signer:</p>
+<pre><code class="language-bash">npm install @polkadot/api @polkadot/util-crypto
+</code></pre>
+<p>You'll also need an Ethereum signer if you're interacting with an Ethereum-compatible chain like Moonbeam. This guide will cover using Ethers.js and viem. You'll need to install whichever library you want to use:</p>
+<p>=== "Ethers.js"</p>
+<pre><code>```bash
+npm install ethers@^5.7.2
+```
+</code></pre>
+<p>=== "viem"</p>
+<pre><code>```bash
+npm install viem
+```
+</code></pre>
+<h2 id="create-signers-create-signers">Create Signers {: #create-signers }</h2>
+<p>When transferring assets between chains, you'll need signers in place to sign the transactions. If you're interacting with an Ethereum-compatible chain that uses standard Ethereum-style H160 addresses, such as Moonbeam, you'll need to have an Ethereum signer, which can be an <a href="https://docs.ethers.org/v5/">Ethers.js</a>{target=_blank} signer or a <a href="https://viem.sh/docs/clients/wallet.html">viem Wallet Client</a>{target=_blank}. To interact with the relay chain or other parachains, you'll need a <a href="https://polkadot.js.org/docs/api/">Polkadot</a>{target=_blank} signer.</p>
+<p>You can pass, for example, a <a href="https://docs.ethers.org/v5/getting-started/#getting-started--connecting">browser extension wallet as a signer into Ethers</a>{target=_blank} or <a href="https://viem.sh/docs/clients/wallet.html#json-rpc-accounts">viem</a>{target=_blank}, such as MetaMask. Similarly, with Polkadot, you can <a href="https://polkadot.js.org/docs/extension/">pass a compatible wallet to the signer using the <code>@polkadot/extension-dapp</code> library</a>{target=_blank}.</p>
+<p>To create an EVM signer and a Polkadot signer, you can refer to the following sections.</p>
+<p>!!! remember
+    <strong>Never store your private key or mnemonic in a JavaScript or TypeScript file.</strong></p>
+<h3 id="create-a-evm-signer-create-a-evm-signer">Create a EVM Signer {: #create-a-evm-signer }</h3>
+<p>To create an Ethers signer, you can use the following code snippet:</p>
+<pre><code class="language-js">import { ethers } from 'ethers';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const provider = new ethers.providers.WebSocketProvider('INSERT_WS_ENDPOINT', {
+  chainId: INSERT_CHAIN_ID,
+  name: 'INSERT_CHAIN_NAME',
+});
+const evmSigner = new ethers.Wallet(privateKey, provider);
+</code></pre>
+<p>For Moonbeam specifically, you can use the following configurations:</p>
+<p>=== "Moonbeam"</p>
+<pre><code>```js
+import { ethers } from 'ethers';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const provider = new ethers.providers.WebSocketProvider(
+  '{{ networks.moonbeam.wss_url }}', 
+  {
+    chainId: {{ networks.moonbeam.chain_id }},
+    name: 'moonbeam',
+  }
+);
+const evmSigner = new ethers.Wallet(privateKey, provider);
+```
+</code></pre>
+<p>=== "Moonriver"</p>
+<pre><code>```js
+import { ethers } from 'ethers';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const provider = new ethers.providers.WebSocketProvider(
+  '{{ networks.moonriver.wss_url }}', 
+  {
+    chainId: {{ networks.moonriver.chain_id }},
+    name: 'moonriver',
+  }
+);
+const evmSigner = new ethers.Wallet(privateKey, provider);
+```
+</code></pre>
+<p>=== "Moonbase Alpha"</p>
+<pre><code>```js
+import { ethers } from 'ethers';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const provider = new ethers.providers.WebSocketProvider(
+  '{{ networks.moonbase.wss_url }}',
+  {
+    chainId: {{ networks.moonbase.chain_id }},
+    name: 'moonbase',
+  }
+);
+const evmSigner = new ethers.Wallet(privateKey, provider);
+```
+</code></pre>
+<p>Alternatively, you can create a viem Wallet Client to pass as EVM signer:</p>
+<p>=== "Moonbeam"</p>
+<pre><code>```js
+import { createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts' 
+import { moonbeam } from 'viem/chains';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const account = privateKeyToAccount(privateKey);
+
+const evmSigner = createWalletClient({
+  account,
+  chain: moonbeam,
+  transport: http(),
+});
+```
+</code></pre>
+<p>=== "Moonriver"</p>
+<pre><code>```js
+import { createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts' 
+import { moonriver } from 'viem/chains';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const account = privateKeyToAccount(privateKey);
+
+const evmSigner = createWalletClient({
+  account,
+  chain: moonriver,
+  transport: http(),
+});
+```
+</code></pre>
+<p>=== "Moonbase Alpha"</p>
+<pre><code>```js
+import { createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts' 
+import { moonbaseAlpha } from 'viem/chains';
+
+const privateKey = 'INSERT_PRIVATE_KEY';
+const account = privateKeyToAccount(privateKey);
+
+const evmSigner = createWalletClient({
+  account,
+  chain: moonbaseAlpha,
+  transport: http(),
+});
+```
+</code></pre>
+<p>If you want to pass in a browser extension wallet to viem, you can use the following code:</p>
+<p>=== "Moonbeam"</p>
+<pre><code>```js
+import { createWalletClient, custom } from 'viem';
+import { moonbeam } from 'viem/chains';
+
+const evmSigner = createWalletClient({
+  chain: moonbeam,
+  transport: custom(window.ethereum),
+});
+```
+</code></pre>
+<p>=== "Moonriver"</p>
+<pre><code>```js
+import { createWalletClient, custom } from 'viem';
+import { moonriver } from 'viem/chains';
+
+const evmSigner = createWalletClient({
+  chain: moonriver,
+  transport: custom(window.ethereum),
+});
+```
+</code></pre>
+<p>=== "Moonbase Alpha"</p>
+<pre><code>```js
+import { createWalletClient, custom } from 'viem';
+import { moonbaseAlpha } from 'viem/chains';
+
+const evmSigner = createWalletClient({
+  chain: moonbaseAlpha,
+  transport: custom(window.ethereum),
+});
+```
+</code></pre>
+<p>!!! note
+    --8&lt;-- 'text/_common/endpoint-setup.md'</p>
+<h3 id="create-a-polkadot-signer-create-a-polkadot-signer">Create a Polkadot Signer {: #create-a-polkadot-signer }</h3>
+<p>In this example, you can use a <a href="https://docs.moonbeam.network/builders/build/substrate-api/polkadot-js-api#keyrings">Polkadot.js Keyring</a>{target=_blank} to sign transactions. Please note that this approach is not recommended for production applications.</p>
+<pre><code class="language-js">import { Keyring } from '@polkadot/api';
+import { cryptoWaitReady } from '@polkadot/util-crypto';
+const privateKey = 'INSERT_PRIVATE_KEY';
+await cryptoWaitReady();
+const keyring = new Keyring({
+  ss58Format: 'INSERT_SS58_FORMAT',
+  type: 'sr25519',
+});
+const pair = keyring.createFromUri(privateKey);
+</code></pre>
+<p>!!! note
+    In the above <code>INSERT_PRIVATE_KEY</code> field, you can specify a seed phrase instead of a private key.</p>
+<h2 id="get-asset-and-chain-data-asset-chain-data">Get Asset and Chain Data {: #asset-chain-data }</h2>
+<p>You can use any of the following code examples to retrieve information on the supported assets and the chains that support these assets.</p>
+<h3 id="get-list-of-supported-assets-get-list-of-supported-assets">Get List of Supported Assets {: #get-list-of-supported-assets }</h3>
+<p>To get a list of all of the assets supported by the XCM SDK, you can instantiate the XCM SDK and call the <code>assets</code> function.</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
+
+const sdkInstance = new Sdk();
+const assets = sdkInstance.assets();
+
+console.log('The supported assets are as follows:');
+assets.assets.forEach((asset) =&gt; {
+  console.log(`- ${asset.originSymbol}`);
+});
+</code></pre>
+<h3 id="get-list-of-supported-assets-by-ecosystem-get-supported-assets-by-ecosystem">Get List of Supported Assets by Ecosystem {: #get-supported-assets-by-ecosystem }</h3>
+<p>To get a list of the supported assets for a particular ecosystem, you can pass in the ecosystem name: <code>polkadot</code>, <code>kusama</code>, or <code>alphanet-relay</code>. For example, the following snippet will get all of the Polkadot assets supported:</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
+
+const sdkInstance = new Sdk();
+const assets = sdkInstance.assets('polkadot');
+
+console.log('The supported assets within the Polkadot ecosystem are as follows:');
+assets.assets.forEach((asset) =&gt; {
+  console.log(`- ${asset.originSymbol}`);
+});
+</code></pre>
+<h3 id="get-list-of-supported-chains-by-asset-get-list-of-supported-assets-by-chain">Get List of Supported Chains by Asset {: #get-list-of-supported-assets-by-chain }</h3>
+<p>To get a list of the supported source and destination chains for a given asset, you can use the following code snippet, which logs the supported chains by asset for all of the supported assets in the Polkadot ecosystem:</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
+
+const sdkInstance = new Sdk();
+const assets = sdkInstance.assets('polkadot');
+
+assets.assets.forEach((asset) =&gt; {
+  const { sourceChains, source } = assets.asset(asset);
+  console.log(`You can send ${asset.originSymbol}...`);
+  if (sourceChains.length &gt; 1) {
+    sourceChains.forEach((sourceChain) =&gt; {
+      const { destinationChains } = source(sourceChain);
+      if (destinationChains.length &gt; 0) {
+        destinationChains.forEach((destination) =&gt; {
+          console.log(`- From ${source.name} to ${destination.name}`);
+        });
+      }
+    });
+  }
+});
+</code></pre>
+<h2 id="build-xcm-transfer-data-build-xcm-transfer-data">Build XCM Transfer Data {: #build-xcm-transfer-data }</h2>
+<p>In order to transfer an asset from one chain to another, you'll need to first build the transfer data, which defines the asset to be transferred, the source chain and address, the destination chain and address, and the associated signer for the transaction. Building the transfer data is the first step; in the next section, you'll learn how to use the transfer data to actually transfer the asset.</p>
+<p>To get started, you'll use the <code>Sdk</code> function, which will expose two methods for building the XCM transfer data: <code>assets</code> and <code>getTransferData</code>.</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
+
+const sdkInstance = new Sdk();
+</code></pre>
+<p>You can choose either method, as both will return the data necessary to initiate an asset transfer between the source chain and the destination chain. Using <code>assets</code> will provide additional data along the way, including the list of supported assets and, once an asset is selected, the supported source and destination chains that are able to send and receive the asset.</p>
+<p>The process for using <code>assets</code> to build the transfer data is as follows:</p>
+<ol>
+<li>
+<p>Call the <code>assets</code> function and optionally pass in the ecosystem that you want to retrieve a list of assets for or that the asset you want to transfer belongs to. The available ecosystems are: <code>polkadot</code>, <code>kusama</code>, and <code>alphanet-relay</code>. For example:</p>
+<p><code>js
+const { assets, asset } = sdkInstance.assets('polkadot');</code></p>
+<p>This will return a list of the supported assets and the <code>asset</code> function that can be used to define the asset to be transferred</p>
+</li>
+<li>
+<p>Call the <code>asset</code> function and pass in the key or asset object (which includes the key and the origin symbol) to define the asset to be transferred. For example:</p>
+<p><code>js
+// Using the key
+const { sourceChains, source } = asset('dot');</code></p>
+<p>This will return a list of the supported source chains and the <code>source</code> function, which is used to define the source chain to transfer the asset from</p>
+</li>
+<li>
+<p>Call the <code>source</code> function and pass in the key or the chain object (which includes the key, name, and chain type). For example:</p>
+<p><code>js
+// Using the key
+const { destinationChains, destination } = source('polkadot');</code></p>
+<p>This will return a list of the supported destination chains where there is an open XCM channel from the source chain for the given asset and the <code>destination</code> function, which is used to define the destination chain to transfer the asset to</p>
+</li>
+<li>
+<p>Call the <code>destination</code> function and pass in the key or the chain object (which includes the key, name, and chain type). For example:</p>
+<p><code>js
+// Using the key
+const { accounts } = destination('moonbeam');</code></p>
+<p>This will return the <code>accounts</code> function, which is used to define the source and destination addresses and the associated signers for each address</p>
+</li>
+</ol>
+<p>The asset and chain objects are managed within the <code>@moonbeam-network/xcm-config</code> package. You do not need to directly interact with this package as the SDK exposes this data, but there you can find the list of <a href="https://github.com/moonbeam-foundation/xcm-sdk/blob/main/packages/config/src/assets.ts">assets</a>{target=_blank} and <a href="https://github.com/moonbeam-foundation/xcm-sdk/blob/main/packages/config/src/chains.ts">chain data</a>{target=_blank}.</p>
+<p>An example of the steps described above to build the transfer data to transfer DOT from the Polkadot relay chain to Moonbeam is as follows:</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
+
+const sdkInstance = new Sdk();
+
+const fromPolkadot = async () =&gt; {
+  const { assets, asset } = sdkInstance.assets();
+  console.log(
+    `The supported assets are: ${assets.map((asset) =&gt; asset.originSymbol)}`
+  );
+
+  const { sourceChains, source } = asset('dot');
+  console.log(
+    `The supported source chains are: ${sourceChains.map(
+      (chain) =&gt; chain.name
+    )}`
+  );
+
+  const { destinationChains, destination } = source('polkadot');
+  console.log(
+    `The supported destination chains are: ${destinationChains.map(
+      (chain) =&gt; chain.name
+    )}`
+  );
+
+  const { accounts } = destination('moonbeam');
+  const data = await accounts(
+    pair.address,
+    evmSigner.address, // If using viem, use evmSigner.account.address
+    {
+      evmSigner,
+      polkadotSigner: pair,
+    }
+  );
+};
+
+fromPolkadot();
+</code></pre>
+<p>!!! note
+    For more information on each of the <code>Sdk().assets()</code> builder functions, including the parameters and returned data, please refer to the <a href="/v1/reference#transfer-data-builder-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<p>If you don't need any of the asset or chain information, you can use the <code>getTransferData</code> function:</p>
+<pre><code class="language-js">import { Sdk } from '@moonbeam-network/xcm-sdk';
+
+const sdkInstance = new Sdk();
+
+const fromPolkadot = async () =&gt; {
+  const data = await sdkInstance.getTransferData({
+    destinationAddress: evmSigner.address, // If using viem, use evmSigner.account.address
+    destinationKeyOrChain: 'moonbeam',
+    keyOrAsset: 'dot',
+    polkadotSigner: pair,
+    sourceAddress: pair.address,
+    sourceKeyOrChain: 'polkadot',
+    evmSigner,
+  });
+};
+
+fromPolkadot();
+</code></pre>
+<p>!!! note
+    For more information on the <code>Sdk().getTransferData()</code> function, including the parameters and returned data, please refer to the <a href="/v1/reference#core-sdk-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<p>As previously mentioned, regardless of which method you use to build the transfer data, you'll generate the same output.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// Send DOT from Polkadot to Moonbeam
+// data
+{
+  destination: {
+    balance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    chain: l {
+      ecosystem: 'polkadot',
+      isTestChain: false,
+      key: 'moonbeam',
+      name: 'Moonbeam',
+      type: 'evm-parachain',
+      assetsData: [Map],
+      genesisHash: '0xfe58ea77779b7abda7da4ec526d14db9b1e9cd40a217c34892af80a9b332b76d',
+      parachainId: 2004,
+      ss58Format: 1284,
+      usesChainDecimals: false,
+      weight: 1000000000,
+      ws: 'wss://wss.api.moonbeam.network',
+      id: 1284,
+      rpc: 'https://rpc.api.moonbeam.network'
+    },
+    existentialDeposit: e {
+      key: 'glmr',
+      originSymbol: 'GLMR',
+      amount: 0n,
+      decimals: 18,
+      symbol: 'GLMR'
+    },
+    fee: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 33068783n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    min: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    }
+  },
+  getEstimate: [Function: getEstimate],
+  isSwapPossible: true,
+  max: e {
+    key: 'dot',
+    originSymbol: 'DOT',
+    amount: 0n,
+    decimals: 10,
+    symbol: 'DOT'
+  },
+  min: e {
+    key: 'dot',
+    originSymbol: 'DOT',
+    amount: 33068783n,
+    decimals: 10,
+    symbol: 'DOT'
+  },
+  source: {
+    balance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    chain: m {
+      ecosystem: 'polkadot',
+      isTestChain: false,
+      key: 'polkadot',
+      name: 'Polkadot',
+      type: 'parachain',
+      assetsData: Map(0) {},
+      genesisHash: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3',
+      parachainId: 0,
+      ss58Format: 0,
+      usesChainDecimals: false,
+      weight: 1000000000,
+      ws: 'wss://rpc.polkadot.io'
+    },
+    destinationFeeBalance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    existentialDeposit: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 10000000000n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    fee: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 169328990n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    feeBalance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    max: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    min: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    }
+  },
+  swap: [AsyncFunction: swap],
+  transfer: [AsyncFunction: transfer]
+}
+```
+</code></pre>
+<p>As you may have noticed in the example response, the transfer data contains information on the asset to be transferred, the source chain, and the destination chain. In addition, a few functions have been exposed:</p>
+<ul>
+<li><code>swap()</code> - returns the transfer data necessary to swap the asset from the destination chain back to the source chain</li>
+<li><code>transfer()</code> - transfers a given amount of the asset from the source chain to the destination chain</li>
+<li><code>getEstimate()</code> - returns an estimated amount of the asset that will be received on the destination chain, less any destination fees</li>
+</ul>
+<h2 id="transfer-an-asset-transfer-an-asset">Transfer an Asset {: #transfer-an-asset }</h2>
+<p>Now that you've built the transfer data, you can go ahead and transfer the asset from the source chain to the destination chain. To do so, you can use the <code>transfer</code> function, but first you'll need to specify an amount to send. You can specify the amount in integer or decimal format. For example, if you wanted to send 0.1 DOT, you could use <code>1000000000n</code> or <code>'0.1'</code>. You can use <a href="/v1/reference#utility-functions">asset conversion methods</a>{target=_blank}, like <code>toDecimal</code> to convert the asset to decimal format.</p>
+<p>For this example, you can transfer twice the minimum amount required of DOT:</p>
+<pre><code class="language-js">...
+
+const amount = data.min.toDecimal() * 2;
+console.log(`Sending from ${data.source.chain.name} amount: ${amount}`);
+const hash = await data.transfer(amount);
+console.log(`${data.source.chain.name} tx hash: ${hash}`);
+</code></pre>
+<p>As seen in the above snippet, the <code>transfer</code> function returns a transaction hash on the source chain.</p>
+<p>!!! note
+    For more information on the parameters and returned data for <code>transfer</code>, please refer to the <a href="/v1/reference#transfer-data-consumer-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<h2 id="swap-an-asset-swap-an-asset">Swap an Asset {: #swap-an-asset}</h2>
+<p>To swap an asset, you can use the same transfer data and call <code>data.swap()</code> to switch the source and destination chain information. From there, you can simply call the <code>transfer</code> function to execute the swap.</p>
+<pre><code class="language-js">...
+
+const swapData = await data.swap();
+const amount = swapData.min.toDecimal() * 2;
+console.log(`Sending from ${swapData.source.chain.name} amount: ${amount}`);
+const hash = await swapData.transfer(amount);
+console.log(`${swapData.source.chain.name} tx hash: ${hash}`);
+</code></pre>
+<p>The <code>swap</code> function returns the transfer data with the original source chain and destination chain swapped. Using the previous example of sending DOT from Polkadot to Moonbeam, the swap transfer data would send DOT from Moonbeam to Polkadot.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// swapData
+{
+  destination: {
+    balance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    chain: m {
+      ecosystem: 'polkadot',
+      isTestChain: false,
+      key: 'polkadot',
+      name: 'Polkadot',
+      type: 'parachain',
+      assetsData: Map(0) {},
+      genesisHash: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3',
+      parachainId: 0,
+      ss58Format: 0,
+      usesChainDecimals: false,
+      weight: 1000000000,
+      ws: 'wss://rpc.polkadot.io'
+    },
+    existentialDeposit: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 10000000000n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    fee: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 169328990n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    feeBalance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    max: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    min: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    }
+  },
+  getEstimate: [Function: getEstimate],
+  isSwapPossible: true,
+  max: e {
+    key: 'dot',
+    originSymbol: 'DOT',
+    amount: 0n,
+    decimals: 10,
+    symbol: 'DOT'
+  },
+  min: e {
+    key: 'dot',
+    originSymbol: 'DOT',
+    amount: 33068783n,
+    decimals: 10,
+    symbol: 'DOT'
+  },
+  source: {
+    balance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    chain: l {
+      ecosystem: 'polkadot',
+      isTestChain: false,
+      key: 'moonbeam',
+      name: 'Moonbeam',
+      type: 'evm-parachain',
+      assetsData: [Map],
+      genesisHash: '0xfe58ea77779b7abda7da4ec526d14db9b1e9cd40a217c34892af80a9b332b76d',
+      parachainId: 2004,
+      ss58Format: 1284,
+      usesChainDecimals: false,
+      weight: 1000000000,
+      ws: 'wss://wss.api.moonbeam.network',
+      id: 1284,
+      rpc: 'https://rpc.api.moonbeam.network'
+    },
+    destinationFeeBalance: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    existentialDeposit: e {
+      key: 'glmr',
+      originSymbol: 'GLMR',
+      amount: 0n,
+      decimals: 18,
+      symbol: 'GLMR'
+    },
+    fee: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 33068783n,
+      decimals: 10,
+      symbol: 'DOT'
+    },
+    min: e {
+      key: 'dot',
+      originSymbol: 'DOT',
+      amount: 0n,
+      decimals: 10,
+      symbol: 'DOT'
+    }
+  },
+  swap: [AsyncFunction: swap],
+  transfer: [AsyncFunction: transfer]
+}
+```
+</code></pre>
+<p>!!! note
+    For more information on the parameters and returned data for <code>swap</code>, please refer to the <a href="/v1/reference#transfer-data-consumer-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<h2 id="get-an-estimate-of-the-asset-to-be-received-on-the-destination-chain-get-estimate">Get an Estimate of the Asset to be Received on the Destination Chain {: #get-estimate }</h2>
+<p>When you send an XCM message, you typically pay fees on the destination chain to execute the XCM instructions. Before you transfer the asset, you can use the <code>getEstimate</code> function to calculate an estimated amount of the asset that will be received on the destination chain, minus any fees.</p>
+<p>The <code>getEstimate</code> function is tied to a specific transfer request as it is based on the asset being transferred and the destination chain fees, so you'll need to create the <a href="#build-xcm-transfer-data">transfer data</a> first.</p>
+<p>You'll need to provide the amount to be transferred to the <code>getEstimate</code> function. In the following example, you'll get the estimated amount of DOT that will be received on Moonbeam when 0.1 DOT is transferred. You can specify the amount in integer (<code>1000000000n</code>) or decimal (<code>'0.1'</code>) format.</p>
+<pre><code class="language-js">...
+
+const amount = '0.1';
+const estimatedAmount = data.getEstimate(amount);
+
+console.log(
+  `The estimated amount of ${
+    data.source.balance.originSymbol
+  } to be received on ${
+    data.destination.chain.name
+  } is: ${estimatedAmount.toDecimal()} ${data.destination.balance.symbol}`
+);
+</code></pre>
+<p>The <code>getEstimate</code> function returns the estimated amount along with information on the asset being transferred.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// estimatedAmount
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 966931217n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+```
+</code></pre>
+<p>!!! note
+    For more information on the parameters and returned data for <code>getEstimate</code>, please refer to the <a href="/v1/reference#transfer-data-consumer-methods">XCM SDK Reference</a>{target=_blank}.</p>
+<h2 id="get-transfer-minimum-and-maximum-amounts-transfer-min-max-amounts">Get Transfer Minimum and Maximum Amounts {: #transfer-min-max-amounts }</h2>
+<p>You can use <a href="#build-xcm-transfer-data">transfer data</a> to retrieve the minimum and maximum amount of an asset that can be transferred. To do so, you'll access the <code>min</code> and <code>max</code> properties of the asset being transferred:</p>
+<p>=== "Minimum"</p>
+<pre><code>```js
+...
+
+const amount = data.min.toDecimal();
+const symbol = data.min.originSymbol;
+
+console.log(`You can send min: ${amount} ${symbol}`);
+```
+</code></pre>
+<p>=== "Maximum"</p>
+<pre><code>```js
+...
+
+const amount = data.max.toDecimal();
+const symbol = data.max.originSymbol;
+
+console.log(`You can send max: ${amount} ${symbol}`);
+```
+</code></pre>
+<p>The <code>min</code> and <code>max</code> properties return the minimum and maximum amount of the asset that can be transferred, along with information on the asset. If the source account does not hold a balance of the chosen asset, the <code>data.max</code> amount will be <code>0n</code>.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// data.min
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 33068783n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+// data.max
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 0n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+```
+</code></pre>
+<p>!!! note
+    For more information on assets and asset amounts, please refer to the <a href="/v1/reference#assets">XCM SDK Reference</a>{target=_blank}.</p>
+<h2 id="get-transfer-fees-get-transfer-fees">Get Transfer Fees {: #get-transfer-fees }</h2>
+<p>The <a href="#build-xcm-transfer-data">transfer data</a> provides information on transfer fees for the source and destination chains. You can retrieve the fees using the following snippet:</p>
+<pre><code class="language-js">...
+const sourceChain = data.source.chain.name;
+const sourceFee = data.source.fee;
+
+const destinationChain = data.destination.chain.name;
+const destinationFee = data.destination.fee;
+
+console.log(
+  `You will pay ${sourceFee.toDecimal()} ${
+    sourceFee.symbol
+  } fee on ${
+    sourceChain
+  } and ${destinationFee.toDecimal()} ${
+    destinationFee.symbol
+  } fee on ${destinationChain}.`
+);
+</code></pre>
+<p>The <code>fee</code> property returns the amount of fees to be paid along with information on the asset.</p>
+<p>??? code "Example response"</p>
+<pre><code>```js
+// sourceFee
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 169328990n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+// destinationFee
+{
+  key: 'dot',
+  originSymbol: 'DOT',
+  amount: 33068783n,
+  decimals: 10,
+  symbol: 'DOT'
+}
+```
+</code></pre>
+<p>!!! note
+    For more information on assets and asset amounts, including fees, please refer to the <a href="/v1/reference#assets">XCM SDK Reference</a>{target=_blank}.</p>
+<p>--8&lt;-- 'text/_disclaimers/third-party-content.md'</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2024 Moonbeam Foundation. All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
