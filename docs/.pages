@@ -1,4 +1,5 @@
 nav:
- - index.md
- - reference.md
- - xcm-sdk.md
+ - 'Core Interfaces': 'core-interfaces.md'
+ - 'Core Methods': 'core-methods.md'
+ - 'Using the XCM SDK': 'example-usage.md'
+ - 'Contribute': 'contribute.md'

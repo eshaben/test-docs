@@ -1,27 +1,35 @@
-site_name: My Docs
+site_name: XCM SDK Docs
 site_url: https://eshaben.github.io/test-docs/
 docs_dir: docs
 copyright: © 2024 Moonbeam Foundation. All Rights Reserved.
 theme:
   name: material
   custom_dir: material-overrides
-  favicon: /assets/images/Moonbeam-Favicon-50.webp
-  logo: /assets/images/moonbeam-logo.webp
+  favicon: assets/images/Moonbeam-Favicon-50.webp
+  logo: assets/images/Moonbeam-Favicon-50.webp
   font:
     text: Open Sans
   palette:
     # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
+    - media: '(prefers-color-scheme: light)'
       scheme: default
+      primary: white
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
+    - media: '(prefers-color-scheme: dark)'
       scheme: slate
+      primary: black
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
+  features:
+    - navigation.tabs
+    - toc.follow
+    - toc.integrate
+extra_css:
+  - assets/stylesheets/custom.css
 plugins:
   - search
   - awesome-pages
@@ -30,6 +38,21 @@ plugins:
   #       - .snippets/*
   #     enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
   #     enable_creation_date: !!bool true
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 extra:
   version:
     provider: mike
