@@ -1,0 +1,1166 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A reference for the interfaces and methods in the Moonbeam XCM SDK that can be used to send XCM transfers between chains within the Polkadot/Kusama ecosystems.">
+      
+      
+      
+        <link rel="canonical" href="https://eshaben.github.io/test-docs/0.3/reference/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../xcm-sdk/">
+      
+      
+      <link rel="icon" href="/assets/images/Moonbeam-Favicon-50.webp">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>XCM SDK Reference for v3 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#moonbeam-xcm-sdk-reference-v3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  <img src="/assets/images/moonbeam-logo.webp" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              XCM SDK Reference for v3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  <img src="/assets/images/moonbeam-logo.webp" alt="logo">
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    XCM SDK Reference for v3
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    XCM SDK Reference for v3
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction {: #introduction }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-types-and-interfaces-asset-chain-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Types and Interfaces {: #asset-chain-types }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Types and Interfaces {: #asset-chain-types }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assets-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assets {: #assets }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chains-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chains {: #chains }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-data-transfer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Data {: #transfer-data }
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-methods-core-sdk-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Methods {: #core-sdk-methods }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-for-building-transfer-data-starting-with-assets-transfer-data-builder-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods for Building Transfer Data Starting with Assets {: #transfer-data-builder-methods }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-for-consuming-transfer-data-transfer-data-consumer-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods for Consuming Transfer Data {: #transfer-data-consumer-methods }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-for-asset-conversions-utility-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods for Asset Conversions {: #utility-functions }
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xcm-sdk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XCM SDK v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction {: #introduction }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-types-and-interfaces-asset-chain-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Types and Interfaces {: #asset-chain-types }
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Types and Interfaces {: #asset-chain-types }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assets-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assets {: #assets }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chains-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chains {: #chains }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-data-transfer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Data {: #transfer-data }
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-methods-core-sdk-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Methods {: #core-sdk-methods }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-for-building-transfer-data-starting-with-assets-transfer-data-builder-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods for Building Transfer Data Starting with Assets {: #transfer-data-builder-methods }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-for-consuming-transfer-data-transfer-data-consumer-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods for Consuming Transfer Data {: #transfer-data-consumer-methods }
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-for-asset-conversions-utility-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods for Asset Conversions {: #utility-functions }
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="moonbeam-xcm-sdk-reference-v3">Moonbeam XCM SDK Reference: v3</h1>
+<h2 id="introduction-introduction">Introduction {: #introduction }</h2>
+<p>The Moonbeam XCM SDK enables developers to easily transfer assets between chains, either between parachains or between a parachain and the relay chain, within the Polkadot/Kusama ecosystem. With the SDK, you don't need to worry about determining the multilocation of the origin or destination assets or which extrinsics are used on which networks to send XCM transfers.</p>
+<p>The SDK provides an API that enables you to get asset information for each of the supported assets, the source chains where a given asset can be sent from, and, given a source chain, the supported destination chains where the given asset can be sent to. The SDK also includes helper methods related to transferring cross-chain assets, such as the ability to get an estimated amount of the asset the destination account will receive, less any execution fees, and asset conversion methods based on the asset and number of decimals it has. All of which enables you to easily and seamlessly transfer assets across chains.</p>
+<p>This page includes a list of the interfaces and methods available in the XCM SDK for v1. For information on how to use the XCM SDK interfaces and methods, please refer to the <a href="/v1/xcm-sdk">Using the XCM SDK</a>{target=_blank} guide.</p>
+<h2 id="core-types-and-interfaces-asset-chain-types">Core Types and Interfaces {: #asset-chain-types }</h2>
+<p>The XCM SDK is based on the premise of defining an asset to transfer and then defining the source chain to send the asset from and the destination chain to send the asset to, which combined builds the transfer data. The following sections cover the types and interfaces you'll interact with when interacting with assets, chains, and transfer data.</p>
+<h3 id="assets-assets">Assets {: #assets }</h3>
+<ul>
+<li>
+<p><code>Asset</code> - defines an asset's key and symbol used on the asset's origin chain</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>key</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;">Identifies an asset</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>originSymbol</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;">The symbol of the asset on the asset's origin chain</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>AssetAmount</code> - defines properties related to an asset, including <code>Asset</code> properties, the decimals and symbol of the asset, and the amount an associated source or destination address has of the asset</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>amount</code></td>
+<td style="text-align: center;"><em>bigint</em></td>
+<td style="text-align: center;">Identifies a particular amount of the asset (i.e., balance, minimum, maximum, etc.)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>decimals</code></td>
+<td style="text-align: center;"><em>number</em></td>
+<td style="text-align: center;">The number of decimals the asset has</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>symbol</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;">The symbol of the asset</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>key</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;">Identifies an asset</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>originSymbol</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;">The symbol of the asset on the asset's origin chain</td>
+</tr>
+</tbody>
+</table>
+<p>!!! note
+    There are a few utility methods that are available for working with <code>AssetAmount</code> class that convert the amount to various formats. Please refer to the <a href="#utility-functions">Methods for Asset Conversions</a> section.</p>
+</li>
+</ul>
+<h3 id="chains-chains">Chains {: #chains }</h3>
+<ul>
+<li>
+<p><code>Chain</code> - defines properties related to a chain, used to define the source and destination chains. If a chain is an EVM parachain, there are a couple additional properties</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>ecosystem</code></td>
+<td style="text-align: center;"><em>Ecosystem</em></td>
+<td style="text-align: center;">Identifies the ecosystem the chain belongs to: <code>polkadot</code>, <code>kusama</code>, or <code>alphanet-relay</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>isTestChain</code></td>
+<td style="text-align: center;"><em>boolean</em></td>
+<td style="text-align: center;">Whether the chain is a TestNet</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>key</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;">Identifies a chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>name</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;">The name of the chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>type</code></td>
+<td style="text-align: center;"><em>ChainType</em></td>
+<td style="text-align: center;">The type of the chain: <code>parachain</code> or <code>evm-parachain</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>assetsData</code></td>
+<td style="text-align: center;"><em>Map<string, ChainAssetsData></em></td>
+<td style="text-align: center;">A list of the assets that the chain supports</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>genesisHash</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;">The hash of the genesis block</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>parachainId</code></td>
+<td style="text-align: center;"><em>number</em></td>
+<td style="text-align: center;">The ID of the parachain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ss58Format</code></td>
+<td style="text-align: center;"><em>number</em></td>
+<td style="text-align: center;">The <a href="https://polkadot.js.org/docs/keyring/start/ss58/">ss58 format</a>{target=_blank} for the chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>usesChainDecimals</code></td>
+<td style="text-align: center;"><em>boolean</em></td>
+<td style="text-align: center;">A flag indicating if the chain uses its own decimals in balance queries for all the assets. Defaults to <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ws</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;">The WebSocket endpoint for the chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>id</code></td>
+<td style="text-align: center;"><em>number</em></td>
+<td style="text-align: center;"><strong>For EVM parachains only</strong> - The chain ID</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>rpc</code></td>
+<td style="text-align: center;"><em>string</em></td>
+<td style="text-align: center;"><strong>For EVM parachains only</strong> - The HTTP RPC endpoint for the chain</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>ChainAssetsData</code> - defines the information needed to target the asset on the chain. This is mostly for internal usage to accommodate how different chains store their assets. The SDK defaults to the asset ID if certain properties are not applicable to the given chain</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>asset</code></td>
+<td style="text-align: center;"><em>Asset</em></td>
+<td style="text-align: center;">The asset's key and origin symbol</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>balanceId</code></td>
+<td style="text-align: center;"><em>ChainAssetId</em></td>
+<td style="text-align: center;">The balance ID of the asset. Defaults to the asset ID</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>decimals</code></td>
+<td style="text-align: center;"><em>number</em></td>
+<td style="text-align: center;">The number of decimals the asset has</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>id</code></td>
+<td style="text-align: center;"><em>ChainAssetId</em></td>
+<td style="text-align: center;">The asset ID</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>metadataId</code></td>
+<td style="text-align: center;"><em>ChainAssetId</em></td>
+<td style="text-align: center;">The metadata ID of the asset</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>minId</code></td>
+<td style="text-align: center;"><em>ChainAssetId</em></td>
+<td style="text-align: center;">The minimum ID of the asset</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>palletInstance</code></td>
+<td style="text-align: center;"><em>number</em></td>
+<td style="text-align: center;">The number of the pallet instance the asset belongs to</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>min</code></td>
+<td style="text-align: center;"><em>number</em></td>
+<td style="text-align: center;">The minimum amount of the asset that is required to be left in the account for it to be active. Similar to the existential deposit except it is for non-native assets</td>
+</tr>
+</tbody>
+</table>
+<p><code>ChainAssetId</code> is a generic type used to specify the location of the asset on the chain, which is different on every chain, and is defined as:</p>
+<p><code>ts
+type ChainAssetId =
+  | string
+  | number
+  | bigint
+  | { [key: string]: ChainAssetId };</code></p>
+</li>
+</ul>
+<h3 id="transfer-data-transfer-data">Transfer Data {: #transfer-data }</h3>
+<ul>
+<li>
+<p><code>TransferData</code> - defines the complete transfer data for transferring an asset, including asset, source chain, and destination chain information, and a few helper functions for the transfer process</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>destination</code></td>
+<td style="text-align: center;"><em>DestinationChainTransferData</em></td>
+<td style="text-align: center;">The assembled destination chain and address information</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>getEstimate</code></td>
+<td style="text-align: center;">function</td>
+<td style="text-align: center;">Gets the estimated amount of the asset that will be received by the destination address</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>isSwapPossible</code></td>
+<td style="text-align: center;"><em>boolean</em></td>
+<td style="text-align: center;">Returns whether or not the swap is possible</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>max</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The maximum amount of the asset that <em>can</em> be transferred</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>min</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The minimum amount of the asset that <em>can</em> be transferred</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>source</code></td>
+<td style="text-align: center;"><em>SourceChainTransferData</em></td>
+<td style="text-align: center;">The assembled source chain and address information</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>swap</code></td>
+<td style="text-align: center;">function</td>
+<td style="text-align: center;">Swaps the destination and the source chains and returns the swapped transfer data</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>transfer</code></td>
+<td style="text-align: center;">function</td>
+<td style="text-align: center;">Transfers a given amount of the asset from the source chain to the destination chain</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>DestinationChainTransferData</code> - defines the destination chain data for the transfer</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>balance</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The balance of the asset being transferred on the destination address</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>chain</code></td>
+<td style="text-align: center;"><em>AnyChain</em></td>
+<td style="text-align: center;">The destination chain information</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>existentialDeposit</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The existential deposit for the asset being transferred on the destination chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>fee</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The amount of fees for the asset being transferred on the destination chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>min</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The minimum amount of the asset to transfer. This is different than <code>TransferData.min</code>, as this dictates the minimum amount that should be received on the destination chain</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>SourceChainTransferData</code> -  defines the source chain data for the transfer</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>balance</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The balance of the asset being transferred for the source address</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>chain</code></td>
+<td style="text-align: center;"><em>AnyChain</em></td>
+<td style="text-align: center;">The source chain information</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>destinationFeeBalance</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The balance of the asset used to pay for fees in the destination chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>existentialDeposit</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The existential deposit for the asset being transferred on the source chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>fee</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The amount of fees for the asset being transferred on the source chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>feeBalance</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The balance of the asset being transferred on the source chain</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>min</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The minimum amount of the asset that should be kept on the source chain, taking into consideration the <code>existentialDeposit</code> and <code>fee</code> for the transfer</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>max</code></td>
+<td style="text-align: center;"><em>AssetAmount</em></td>
+<td style="text-align: center;">The maximum amount of the asset that <em>can</em> be transferred</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h2 id="core-methods-core-sdk-methods">Core Methods {: #core-sdk-methods }</h2>
+<p>The SDK provides the following core methods:</p>
+<ul>
+<li>
+<p><code>Sdk()</code> - exposes the methods of the XCM SDK. <strong>Must be called first to access other SDK methods</strong></p>
+<p>??? code "Parameters"
+    |    Name    |     Type     |                       Description                        |
+    |:----------:|:------------:|:--------------------------------------------------------:|
+    | <code>options?</code> | <em>SdkOptions</em> | Allows you to specify an <code>evmSigner</code> or <code>polkadotSigner</code> |</p>
+<p>??? code "Returns"
+    |       Name        |   Type   |                                                        Description                                                         |
+    |:-----------------:|:--------:|:--------------------------------------------------------------------------------------------------------------------------:|
+    |     <code>assets</code>      | function | Provides an entry point to building the data necessary to transfer an asset between a source chain and a destination chain |
+    | <code>getTransferData</code> | function |               Builds the data necessary to transfer an asset between a source chain and a destination chain                |</p>
+</li>
+<li>
+<p><code>getTransferData()</code> - builds the data necessary to transfer an asset between a source chain and a destination chain</p>
+<p>??? code "Parameters"
+    |          Name           |               Type               |                                                               Description                                                               |
+    |:-----------------------:|:--------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
+    |  <code>destinationAddress</code>   |             <em>string</em>             |                                      The address of the receiving account on the destination chain                                      |
+    | <code>destinationKeyorChain</code> |       <em>string | AnyChain</em>       |                                            The key or <code>Chain</code> data for the destination chain                                            |
+    |      <code>evmSigner?</code>       | <em>EthersSigner  | WalletClient</em>  | The signer for Ethereum-compatible chains that use H160 Ethereum-style accounts. Can be either an Ethers signer or a viem Wallet Client |
+    |      <code>keyOrAsset</code>       |        <em>string | Asset</em>         |                                         The key or <code>Asset</code> data for the asset being transferred                                         |
+    |    <code>polkadotSigner?</code>    | <em>PolkadotSigner | IKeyringPair</em> |                                                   The Polkadot signer or Keyring pair                                                   |
+    |     <code>sourceAddress</code>     |             <em>string</em>             |                                         The address of the sending account on the source chain                                          |
+    |   <code>sourceKeyOrChain</code>    |       <em>string | AnyChain</em>       |                                              The key or <code>Chain</code> data for the source chain                                               |</p>
+<p>??? code "Returns"
+    |       Name       |              Type              |                                       Description                                       |
+    |:----------------:|:------------------------------:|:---------------------------------------------------------------------------------------:|
+    |  <code>destination</code>   | <em>DestinationChainTransferData</em> |                 The assembled destination chain and address information                 |
+    |  <code>getEstimate</code>   |            function            | Gets the estimated amount of the asset that will be received by the destination address |
+    | <code>isSwapPossible</code> |           <em>boolean</em>            |                       Returns whether or not the swap is possible                       |
+    |      <code>max</code>       |         <em>AssetAmount</em>          |                 The maximum amount of the asset that can be transferred                 |
+    |      <code>min</code>       |         <em>AssetAmount</em>          |                 The minimum amount of the asset that can be transferred                 |
+    |     <code>source</code>     |   <em>SourceChainTransferData</em>    |                   The assembled source chain and address information                    |
+    |      <code>swap</code>      |            function            |    Swaps the destination and the source chains and returns the swapped transfer data    |
+    |    <code>transfer</code>    |            function            |  Transfers a given amount of the asset from the source chain to the destination chain   |</p>
+</li>
+<li>
+<p><code>assets()</code> - provides an entry point to building the data necessary to transfer an asset between a source chain and a destination chain</p>
+<p>??? code "Parameters"
+    |     Name     |    Type     |                                     Description                                      |
+    |:------------:|:-----------:|:------------------------------------------------------------------------------------:|
+    | <code>ecosystem?</code> | <em>Ecosystem</em> | Specify the ecosystem for a set of assets: <code>polkadot</code>, <code>kusama</code>, or <code>alphanet-relay</code> |</p>
+<p>??? code "Returns"
+    |   Name   |   Type    |           Description            |
+    |:--------:|:---------:|:--------------------------------:|
+    | <code>assets</code> | <em>Asset[]</em> |  A list of the supported assets  |
+    | <code>asset</code>  | function  | Sets the asset to be transferred |</p>
+<pre><code>Refer to the following section on how to continue to build the transfer data using the `asset` function.
+</code></pre>
+</li>
+</ul>
+<h2 id="methods-for-building-transfer-data-starting-with-assets-transfer-data-builder-methods">Methods for Building Transfer Data Starting with Assets {: #transfer-data-builder-methods }</h2>
+<p>When building transfer data with the <code>Sdk().assets()</code> function, you'll use multiple methods to build the underlying XCM message and send it.</p>
+<ul>
+<li>
+<p><code>asset()</code> - sets the asset to be transferred. <strong>Must call <code>assets()</code> first</strong></p>
+<p>??? code "Parameters"
+    |     Name     |       Type        |                       Description                       |
+    |:------------:|:-----------------:|:-------------------------------------------------------:|
+    | <code>keyOrAsset</code> | <em>string | Asset</em> | The key or <code>Asset</code> data for the asset being transferred |</p>
+<p>??? code "Returns"
+    |      Name      |     Type     |                          Description                          |
+    |:--------------:|:------------:|:-------------------------------------------------------------:|
+    | <code>sourceChains</code> | <em>AnyChain[]</em> | A list of the supported source chains for the specified asset |
+    |    <code>source</code>    |   function   |       Sets the source chain to transfer the asset from        |</p>
+</li>
+<li>
+<p><code>source()</code> - sets the source chain to transfer the asset from. <strong>Must call <code>asset()</code> first</strong></p>
+<p>??? code "Parameters"
+    |     Name     |         Type         |                 Description                  |
+    |:------------:|:--------------------:|:--------------------------------------------:|
+    | <code>keyOrChain</code> | <em>string | AnyChain</em> | The key or <code>Chain</code> data for the source chain |</p>
+<p>??? code "Returns"
+    |        Name         |     Type     |                                     Description                                     |
+    |:-------------------:|:------------:|:-----------------------------------------------------------------------------------:|
+    | <code>destinationChains</code> | <em>AnyChain[]</em> | A list of the supported destination chains for the specified asset and source chain |
+    |    <code>destination</code>    |   function   |                Sets the destination chain to transfer the asset from                |</p>
+</li>
+<li>
+<p><code>destination()</code> - sets the destination chain to transfer the asset to. <strong>Must call <code>source()</code> first</strong></p>
+<p>??? code "Parameters"
+    |     Name     |         Type         |                    Description                    |
+    |:------------:|:--------------------:|:-------------------------------------------------:|
+    | <code>keyOrChain</code> | <em>string | AnyChain</em> | The key or <code>Chain</code> data for the destination chain |</p>
+<p>??? code "Returns"
+    |    Name    |   Type   |                                          Description                                          |
+    |:----------:|:--------:|:---------------------------------------------------------------------------------------------:|
+    | <code>accounts</code> | function | Sets the source address, the destination address, and the signer(s) required for the transfer |</p>
+</li>
+<li>
+<p><code>accounts()</code> - sets the source address, the destination address, and the signer(s) required for the transfer. <strong>Must call <code>destination()</code> first</strong></p>
+<p>??? code "Parameters"
+    |         Name         |        Type        |                          Description                          |
+    |:--------------------:|:------------------:|:-------------------------------------------------------------:|
+    |   <code>sourceAddress</code>    |      <em>string</em>      |    The address of the sending account on the source chain     |
+    | <code>destinationAddress</code> |      <em>string</em>      | The address of the receiving account on the destination chain |
+    |      <code>signers?</code>      | <em>Partial(signers)</em> | The Ethers or Polkadot signers required to sign transactions  |</p>
+<p>??? code "Returns"
+    Please refer to the returns section of the <a href="#:~:text=getTransferData()"><code>getTransferData()</code> method</a> for information on the returned transfer data.</p>
+</li>
+</ul>
+<h2 id="methods-for-consuming-transfer-data-transfer-data-consumer-methods">Methods for Consuming Transfer Data {: #transfer-data-consumer-methods }</h2>
+<ul>
+<li>
+<p><code>swap()</code> - returns the transfer data necessary to swap the asset from the destination chain back to the source chain</p>
+<p>??? code "Parameters"
+    None</p>
+<p>??? code "Returns"
+    Please refer to the returns section of the <a href="#:~:text=getTransferData()"><code>getTransferData()</code> method</a> for information on the returned transfer data. Keep in mind that with the <code>swap</code> function, the <code>source</code> and <code>destination</code> in the original transfer data has been swapped.</p>
+</li>
+<li>
+<p><code>transfer()</code> - transfers a given amount of the asset from the source chain to the destination chain</p>
+<p>??? code "Parameters"
+    |   Name   |             Type             |                                  Description                                  |
+    |:--------:|:----------------------------:|:-----------------------------------------------------------------------------:|
+    | <code>amount</code> | <em>bigint | number | string</em> | The amount of the asset to transfer between the source and destination chains |</p>
+<p>??? code "Returns"
+    | Name |       Type        |                        Description                        |
+    |:----:|:-----------------:|:---------------------------------------------------------:|
+    |  -   | <em>Promise(string)</em> | The transaction hash for the transfer on the source chain |</p>
+</li>
+<li>
+<p><code>getEstimate()</code> - returns an estimated amount of the asset that will be received on the destination chain, less any destination fees</p>
+<p>??? code "Parameters"
+    |   Name   |        Type        |                                  Description                                  |
+    |:--------:|:------------------:|:-----------------------------------------------------------------------------:|
+    | <code>amount</code> | <em>number | string</em> | The amount of the asset to transfer between the source and destination chains |</p>
+<p>??? code "Returns"
+    | Name |     Type      |                                    Description                                    |
+    |:----:|:-------------:|:---------------------------------------------------------------------------------:|
+    |  -   | <em>AssetAmount</em> | An estimated amount of the asset that will be received by the destination address |</p>
+</li>
+</ul>
+<h2 id="methods-for-asset-conversions-utility-functions">Methods for Asset Conversions {: #utility-functions }</h2>
+<ul>
+<li>
+<p><code>toDecimal()</code> - converts an <code>AssetAmount</code> to a decimal. The number to convert to decimal format and the number of decimals the asset uses are pulled automatically from the <code>AssetAmount</code></p>
+<p>??? code "Parameters"
+    |     Name      |      Type      |                                                                    Description                                                                     |
+    |:-------------:|:--------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------:|
+    | <code>maxDecimal?</code> |    <em>number</em>    |                                          The maximum number of decimal places to use. The default is <code>6</code>                                           |
+    | <code>roundType?</code>  | <em>RoundingMode</em> | Accepts an index that dictates the <a href="https://mikemcl.github.io/big.js/#rm">rounding method</a>{target=_blank} to use based on the <code>RoundingMode</code> enum |</p>
+<pre><code>Where the `RoundingMode` enum is defined as:
+
+```js
+enum RoundingMode {
+  RoundDown = 0,
+  RoundHalfUp = 1,
+  RoundHalfEven = 2,
+  RoundUp = 3
+}
+```
+</code></pre>
+<p>??? code "Returns"
+    | Name |   Type   |            Description             |
+    |:----:|:--------:|:----------------------------------:|
+    |  -   | <em>string</em> | The given amount in decimal format |</p>
+</li>
+<li>
+<p><code>toBig()</code> - converts an <code>AssetAmount</code> to a big number</p>
+<p>??? code "Parameters"
+    None</p>
+<p>??? code "Returns"
+    | Name | Type  |              Description              |
+    |:----:|:-----:|:-------------------------------------:|
+    |  -   | <em>Big</em> | The given amount in big number format |</p>
+</li>
+<li>
+<p><code>toBigDecimal()</code> - converts an <code>AssetAmount</code> to a decimal and then to a big number. The number to convert to decimal format and the number of decimals the asset uses are pulled automatically from the <code>AssetAmount</code></p>
+<p>??? code "Parameters"
+    |     Name      |      Type      |                                                                    Description                                                                     |
+    |:-------------:|:--------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------:|
+    | <code>maxDecimal?</code> |    <em>number</em>    |                                          The maximum number of decimal places to use. The default is <code>6</code>                                           |
+    | <code>roundType?</code>  | <em>RoundingMode</em> | Accepts an index that dictates the <a href="https://mikemcl.github.io/big.js/#rm">rounding method</a>{target=_blank} to use based on the <code>RoundingMode</code> enum |</p>
+<pre><code>Where the `RoundingMode` enum is defined as:
+
+```js
+enum RoundingMode {
+  RoundDown = 0,
+  RoundHalfUp = 1,
+  RoundHalfEven = 2,
+  RoundUp = 3
+}
+```
+</code></pre>
+<p>??? code "Returns"
+    | Name | Type  |                  Description                  |
+    |:----:|:-----:|:---------------------------------------------:|
+    |  -   | <em>Big</em> | The given amount in big number decimal format |</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2024 Moonbeam Foundation. All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>
