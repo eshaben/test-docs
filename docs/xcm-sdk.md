@@ -1,5 +1,5 @@
 ---
-title: XCM SDK v1
+title: XCM SDK v3
 description: Use the Moonbeam XCM SDK to easily transfer cross-chain assets between parachains or between a parachain and relay chain within the Polkadot/Kusama ecosystems.
 ---
 
