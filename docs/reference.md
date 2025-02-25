@@ -9,7 +9,7 @@ description: A reference for the interfaces and methods in the Moonbeam XCM SDK 
 
 The Moonbeam XCM SDK enables developers to easily transfer assets between chains, either between parachains or between a parachain and the relay chain, within the Polkadot/Kusama ecosystem. With the SDK, you don't need to worry about determining the multilocation of the origin or destination assets or which extrinsics are used on which networks to send XCM transfers.
 
-[Click me](https://eshaben.github.io/xcm-sdk-mkdocs/latest/)
+[Click me](https://eshaben.github.io/xcm-sdk-mkdocs/latest)
 
 The SDK provides an API that enables you to get asset information for each of the supported assets, the source chains where a given asset can be sent from, and, given a source chain, the supported destination chains where the given asset can be sent to. The SDK also includes helper methods related to transferring cross-chain assets, such as the ability to get an estimated amount of the asset the destination account will receive, less any execution fees, and asset conversion methods based on the asset and number of decimals it has. All of which enables you to easily and seamlessly transfer assets across chains.
 
